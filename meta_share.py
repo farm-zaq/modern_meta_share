@@ -1,3 +1,7 @@
+#Disclaimer: This is kind of a work in progress
+#Some aspects are messy, and it really needs to use threading because it is slow
+#But it works!
+
 from bs4 import BeautifulSoup
 import requests
 from datetime import datetime
