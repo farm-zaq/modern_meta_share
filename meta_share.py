@@ -9,9 +9,15 @@ import re
 import json
 from pprint import pprint
 import argparse
+import threading
 
 set_names = ["mh1", "mh2", "ltr", "mh3"]
 set_names_standard = set_names + ["standard"]
+
+# This tracks "individual" cards, so if it appears one or more times in a deck
+# And the "quantity" of cards, so how many times it appears
+individual_monthly_data = {}
+quantity_monthly_data = {}
 
 def get_sets_as_sets():
   mh1 = set()
@@ -52,7 +58,7 @@ def get_set_of_card(cardname):
       return set_names[i]
   return "standard"
 
-def get_cards_from_deck(deck, filter_cards=False):
+def get_cards_from_deck(deck, filter_cards):
   deck_individual_cards, deck_quantity_cards = generate_sets()
   in_deck = set()
 
@@ -83,7 +89,7 @@ def get_cards_from_deck(deck, filter_cards=False):
       deck_quantity_cards[set_name] += int(quantity)
   return deck_individual_cards, deck_quantity_cards
 
-def get_cards_from_challenge(link, filter_cards=False):
+def get_cards_from_challenge(link, filter_cards):
   challenge_individual_cards, challenge_quantity_cards = generate_sets()
   url = f"https://www.mtgo.com{link}"
   response = requests.get(url)
@@ -97,30 +103,33 @@ def get_cards_from_challenge(link, filter_cards=False):
           decklists = data["decklists"]
   if decklists:
     for deck in decklists:
-      deck_individual_cards, deck_quantity_cards = get_cards_from_deck(deck, filter_cards=filter_cards)
+      deck_individual_cards, deck_quantity_cards = get_cards_from_deck(deck, filter_cards)
       for key in challenge_individual_cards:
         challenge_individual_cards[key] += deck_individual_cards[key]
         challenge_quantity_cards[key] += deck_quantity_cards[key]
   return challenge_individual_cards, challenge_quantity_cards
+
+def get_cards_for_month(month, year, filter_cards):
+  challenges = get_challenges(month, year)
+  for challenge_link in challenges:
+    challenge_individual_cards, challenge_quantity_cards = get_cards_from_challenge(challenge_link, filter_cards)
+    individual_monthly_data[f"{year}/{month}"] = {}
+    quantity_monthly_data[f"{year}/{month}"] = {}
+    for key in challenge_individual_cards:
+      individual_monthly_data[f"{year}/{month}"][key] = challenge_individual_cards[key]
+      quantity_monthly_data[f"{year}/{month}"][key] = challenge_quantity_cards[key]
+
   
-def get_cards_over_time(start_month, start_year, end_month, end_year, filter_cards=False):
+def get_cards_over_time(start_month, start_year, end_month, end_year, filter_cards):
   month = start_month
   year = start_year
-  individual_cards, quantity_cards = generate_sets()
-  individual_monthly_data = {}
-  quantity_monthly_data = {}
+  threads = []
   while True:
     print(month)
-    challenges = get_challenges(month, year)
-    for challenge_link in challenges:
-      challenge_individual_cards, challenge_quantity_cards = get_cards_from_challenge(challenge_link, filter_cards=filter_cards)
-      individual_monthly_data[f"{year}/{month}"] = {}
-      quantity_monthly_data[f"{year}/{month}"] = {}
-      for key in individual_cards:
-        individual_cards[key] += challenge_individual_cards[key]
-        quantity_cards[key] += challenge_quantity_cards[key]
-        individual_monthly_data[f"{year}/{month}"][key] = challenge_individual_cards[key]
-        quantity_monthly_data[f"{year}/{month}"][key] = challenge_quantity_cards[key]
+    
+    thread = threading.Thread(target=get_cards_for_month, args=(month, year, filter_cards))
+    threads.append(thread)
+    thread.start()
 
     month += 1
     if month == 13:
@@ -128,7 +137,8 @@ def get_cards_over_time(start_month, start_year, end_month, end_year, filter_car
       year += 1
     if year > end_year or (month > end_month and year == end_year):
       break
-  return individual_cards, quantity_cards, individual_monthly_data, quantity_monthly_data
+  for thread in threads:
+    thread.join()
 
 def get_percents(cards):
   total = 0
@@ -137,18 +147,6 @@ def get_percents(cards):
   for key in cards:
     cards[key] = int(100 * cards[key] / total)
   return cards
-
-def print_overall_results(indivual_card_percents, quantity_card_percents):
-  first_line = "\t\t"
-  second_line = "By Single Appearance"
-  third_line = "By Each Appearance"
-  for set_name in set_names_standard:
-    first_line += f"\t{set_name}"
-    second_line += f"\t{indivual_card_percents[set_name]}"
-    third_line += f"\t{quantity_card_percents[set_name]}"
-  print(first_line)
-  print(second_line)
-  print(third_line)
   
 def export_monthly_data(monthly_data, file_name):
   with open(file_name, "w") as file:
@@ -162,11 +160,6 @@ def export_monthly_data(monthly_data, file_name):
 
 sets = get_sets_as_sets()
 
-end_month = datetime.now().month
-end_year = datetime.now().year
-month = 7
-year = 2024
-
 if __name__ == "__main__":
     parser = argparse.ArgumentParser()
     parser.add_argument('--start_month', default=5, type=int, help='1-12, inclusive')
@@ -178,11 +171,6 @@ if __name__ == "__main__":
     parser.add_argument('--quantity_output_file', default="quantity.csv", type=str)
     args = parser.parse_args()
 
-    # This tracks "individual" cards, so if it appears one or more times in a deck
-    # And the "quantity" of cards, so how many times it appears
-    individual_cards, quantity_cards,individual_monthly_data, quantity_monthly_data = get_cards_over_time(args.start_month, args.start_year, args.end_month, args.end_year, filter_cards=args.filter_cards)
-    indivual_card_percents = get_percents(individual_cards)
-    quantity_card_percents = get_percents(quantity_cards)
-    print_overall_results(individual_cards, quantity_cards)
+    get_cards_over_time(args.start_month, args.start_year, args.end_month, args.end_year, args.filter_cards)
     export_monthly_data(individual_monthly_data, args.individual_output_file)
     export_monthly_data(quantity_monthly_data, args.quantity_output_file)
