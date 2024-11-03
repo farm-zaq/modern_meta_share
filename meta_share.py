@@ -7,7 +7,6 @@ import requests
 from datetime import datetime
 import re
 import json
-from pprint import pprint
 import argparse
 import threading
 
@@ -52,7 +51,6 @@ def get_challenges(month, year):
         link = link_tag.get('href')
         if "modern-challenge" in link:
           challenge_urls.append(link)
-  print(month, year)
   return challenge_urls
 
 def get_set_of_card(cardname):
@@ -131,9 +129,6 @@ def get_cards_for_month(cur_month, cur_year, filter_cards):
         individual_monthly_data[f"{cur_year}/{cur_month}"][key] += challenge_individual_cards[key]
         quantity_monthly_data[f"{cur_year}/{cur_month}"][key] += challenge_quantity_cards[key]
   
-  print(individual_monthly_data[f"{cur_year}/{cur_month}"])
-
-  
 def get_cards_over_time(start_month, start_year, end_month, end_year, filter_cards):
   month = start_month
   year = start_year
@@ -168,14 +163,11 @@ def export_monthly_data(monthly_data, file_name, start_month, start_year, end_mo
     while True:    
 
       month_str = f"{year}/{month}"
-      try:
-        percents = get_percents(monthly_data[month_str])
-        file.write(month_str)
-        for set_name in set_names_standard:
-          file.write(f",{percents[set_name]}")
-        file.write("\n")
-      except:
-        print(month_str)
+      percents = get_percents(monthly_data[month_str])
+      file.write(month_str)
+      for set_name in set_names_standard:
+        file.write(f",{percents[set_name]}")
+      file.write("\n")
       month += 1
       if month == 13:
         month = 1
@@ -191,11 +183,12 @@ if __name__ == "__main__":
     parser.add_argument('--start_year', type=int, default=2019, help='e.g. 2023, inclusive')
     parser.add_argument('--end_month', type=int, default=10, help='1-12, inclusive')
     parser.add_argument('--end_year', type=int, default=2024, help='e.g. 2023, inclusive')
-    parser.add_argument('--filter_cards', default=False, type=bool)
-    parser.add_argument('--individual_output_file', default="individual.csv", type=str)
-    parser.add_argument('--quantity_output_file', default="quantity.csv", type=str)
+    parser.add_argument('--filter_cards', action="store_true")
+    parser.add_argument('--individual_file', default="individual.csv", type=str)
+    parser.add_argument('--quantity_file', default="quantity.csv", type=str)
+    parser.add_argument('--no_collect_data', action="store_true")
     args = parser.parse_args()
 
     get_cards_over_time(args.start_month, args.start_year, args.end_month, args.end_year, args.filter_cards)
-    export_monthly_data(individual_monthly_data, args.individual_output_file, args.start_month, args.start_year, args.end_month, args.end_year)
-    export_monthly_data(quantity_monthly_data, args.quantity_output_file, args.start_month, args.start_year, args.end_month, args.end_year)
+    export_monthly_data(individual_monthly_data, args.individual_file, args.start_month, args.start_year, args.end_month, args.end_year)
+    export_monthly_data(quantity_monthly_data, args.quantity_file, args.start_month, args.start_year, args.end_month, args.end_year)
