@@ -212,16 +212,6 @@ def get_set_of_card(cardname):
       return set_names[i]
   return "standard"
 
-def convert_card_data_to_set_data(all_cards):
-  set_data = {}
-  for key in all_cards:
-    period_set_data = {set: 0 for set in set_names_standard}
-    for card_name in all_cards[key]:
-      card_set = get_set_of_card(card_name)
-      period_set_data[card_set] += all_cards[key][card_name]
-    set_data[key] = period_set_data
-  return set_data
-
 def get_percents(cards):
   total = 0
   for key in cards:
@@ -232,50 +222,50 @@ def get_percents(cards):
     cards[key] = int(100 * cards[key] / total)
   return cards
 
-def export_daily_set_data(all_cards, file_name, start_month, start_year, end_month, end_year):
-  month = start_month
-  year = start_year
-  day = 1
+def convert_card_data_to_set_data(all_cards):
+  set_data = []
+  for key in all_cards:
+    period_set_data = {set: 0 for set in set_names_standard}
+    for card_name in all_cards[key]:
+      card_set = get_set_of_card(card_name)
+      period_set_data[card_set] += all_cards[key][card_name]
+    percents = get_percents(period_set_data)
+    if percents:
+      line = key
+      for set_name in percents:
+        line += f",{percents[set_name]}"
+      set_data.append(line)
+  return set_data
+
+def get_most_played_card(period_data):
+  max_count = 0
+  max_name = ""
+  total_count = 0
+  for key in period_data:
+    total_count += period_data[key]
+    if period_data[key] > max_count:
+      max_count = period_data[key]
+      max_name = key
+  if max_count > 0:
+    percent = round(100 * max_count / total_count, 2)
+  return percent, max_name
+
+def convert_card_data_to_most_played_data(all_cards):
+  set_data = []
+  for period in all_cards:
+    percent, max_name = get_most_played_card(all_cards[period])
+    if percent > 0:
+      line = f"{period},{percent},{max_name}"
+      set_data.append(line)
+    return set_data
+
+def export_data(processed_data, file_name, header):
   with open(file_name, "w") as file:
-    file.write("date,mh1,mh2,ltr,mh3,standard\n")
-    while True:    
-      date_str = f'{year}/{month}/{"0" if day < 10 else ""}{day}'
-      if date_str in all_cards and all_cards[date_str]:
-        percents = get_percents(all_cards[date_str])
-        if percents:
-          file.write(date_str)
-          for set_name in set_names_standard:
-            file.write(f",{percents[set_name]}")
-          file.write("\n")
-      day += 1
-      if day > calendar.monthrange(year, month)[1]:
-        day = 1
-        month += 1
-      if month == 13:
-        month = 1
-        year += 1
-      if year > end_year or (month > end_month and year == end_year):
-        break
-  
-def export_monthly_set_data(monthly_data, file_name, start_month, start_year, end_month, end_year):
-  month = start_month
-  year = start_year
-  with open(file_name, "w") as file:
-    file.write("month,mh1,mh2,ltr,mh3,standard\n")
-    while True:    
-      month_str = f"{year}/{month}"
-      percents = get_percents(monthly_data[month_str])
-      if percents:
-        file.write(month_str)
-        for set_name in set_names_standard:
-          file.write(f",{percents[set_name]}")
-        file.write("\n")
-      month += 1
-      if month == 13:
-        month = 1
-        year += 1
-      if year > end_year or (month > end_month and year == end_year):
-        break
+    file.write(header)
+    file.write("\n")
+    for line in processed_data:
+      file.write(line)
+      file.write("\n")
 
 sets = get_sets_as_sets()
 
@@ -289,13 +279,17 @@ if __name__ == "__main__":
     parser.add_argument('--filter_cards', action="store_true")
     parser.add_argument('--output_file', default="output/data.csv", type=str)
     parser.add_argument('--daily', action="store_true")
+    parser.add_argument('--output_type', default="set_data", type=str)
     args = parser.parse_args()
 
-    if not args.daily:
-      all_cards = get_cards_over_time_monthly(args.start_month, args.start_year, args.end_month, args.end_year, args.is_individual, args.filter_cards)
-      set_data = convert_card_data_to_set_data(all_cards)
-      export_monthly_set_data(set_data, args.output_file, args.start_month, args.start_year, args.end_month, args.end_year)
-    else:
+    if args.daily:
       all_cards = get_cards_over_time_daily(args.start_month, args.start_year, args.end_month, args.end_year, args.is_individual, args.filter_cards)
-      set_data = convert_card_data_to_set_data(all_cards)
-      export_daily_set_data(set_data, args.output_file, args.start_month, args.start_year, args.end_month, args.end_year)
+    else:
+      all_cards = get_cards_over_time_monthly(args.start_month, args.start_year, args.end_month, args.end_year, args.is_individual, args.filter_cards)
+    if args.output_type == "set_data":
+      processed_data = convert_card_data_to_set_data(all_cards)
+      header = "Date,MH1,MH2,LTR,MH3,Standard"
+    elif args.output_type == "most_played":
+      processed_data = convert_card_data_to_most_played_data(all_cards)
+      header = "Date,Percent,Name"
+    export_data(processed_data, args.output_file, header)
