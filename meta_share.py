@@ -61,7 +61,7 @@ def get_cards_from_deck(deck, is_individual, filter_cards):
   for card in card_list:
     card_name = None
     if "card_attributes" in card and "card_name" in card["card_attributes"]:
-        card_name = card["card_attributes"]["card_name"]
+        card_name = card["card_attributes"]["card_name"].replace(",", "")
     quantity = 0
     if is_individual:
       quantity = 1
@@ -144,8 +144,18 @@ def get_cards_from_challenge(link, is_individual, filter_cards, cur_month, cur_y
   else:
     return None
 
-def get_cards_for_month(cur_month, cur_year, is_individual, filter_cards):
-  challenges = get_challenges(cur_month, cur_year)
+def get_cards_for_month(cur_month, cur_year, is_individual, filter_cards, stored_only):
+  if stored_only:
+    challenges = []
+    month_folder_name = f"./data/{cur_year}/{cur_month}"
+    for _, dirs, _ in os.walk(month_folder_name):
+      for dir in dirs:
+        dir = f"{month_folder_name}/{dir}"
+        for _, _, files in os.walk(dir):
+          for file in files:
+            challenges.append(file)
+  else:
+    challenges = get_challenges(cur_month, cur_year)
   monthly_cards = {}
   for challenge_link in challenges:
     challenge_cards = get_cards_from_challenge(challenge_link, is_individual, filter_cards, cur_month, cur_year)      
@@ -169,13 +179,13 @@ def get_cards_for_day(month, year, day, is_individual, filter_cards):
           daily_cards[card_name] += challenge_cards[card_name]
   return daily_cards
   
-def get_cards_over_time_monthly(start_month, start_year, end_month, end_year, is_individual, filter_cards):
+def get_cards_over_time_monthly(start_month, start_year, end_month, end_year, is_individual, filter_cards, stored_only):
   month = start_month
   year = start_year
   all_cards = {}
   while True:
     month_str = f"{year}/{month}"
-    all_cards[month_str] = get_cards_for_month(month, year, is_individual, filter_cards)
+    all_cards[month_str] = get_cards_for_month(month, year, is_individual, filter_cards, stored_only)
 
     month += 1
     if month == 13:
@@ -246,8 +256,10 @@ def get_most_played_card(period_data):
     if period_data[key] > max_count:
       max_count = period_data[key]
       max_name = key
+  percent = 0
   if max_count > 0:
     percent = round(100 * max_count / total_count, 2)
+  max_name = max_name.replace(",", "")
   return percent, max_name
 
 def convert_card_data_to_most_played_data(all_cards):
@@ -257,7 +269,35 @@ def convert_card_data_to_most_played_data(all_cards):
     if percent > 0:
       line = f"{period},{percent},{max_name}"
       set_data.append(line)
-    return set_data
+  return set_data
+
+def get_specific_card_percents(period_data, specific_cards):
+  total = 0
+  for card in period_data:
+    total += period_data[card]
+  specfic_card_data = []
+  has_data = False
+  for card in specific_cards:
+    if card in period_data:
+      percent = str(round(100 * period_data[card] / total, 2))
+      has_data = True
+    else:
+      percent = str(0)
+    specfic_card_data.append(percent)
+  if has_data:
+    return specfic_card_data
+  else:
+    return None
+
+def convert_card_data_to_specific_card_data(all_cards, specific_cards):
+  specific_data = []
+  for period in all_cards:
+    percents = get_specific_card_percents(all_cards[period], specific_cards)
+    if percents:
+      line_data = ",".join(percents)
+      line = f"{period},{line_data}"
+      specific_data.append(line)
+  return specific_data
 
 def export_data(processed_data, file_name, header):
   with open(file_name, "w") as file:
@@ -272,7 +312,7 @@ sets = get_sets_as_sets()
 if __name__ == "__main__":
     parser = argparse.ArgumentParser()
     parser.add_argument('--start_month', default=5, type=int, help='1-12, inclusive')
-    parser.add_argument('--start_year', type=int, default=2019, help='e.g. 2023, inclusive')
+    parser.add_argument('--start_year', type=int, default=2017, help='e.g. 2023, inclusive')
     parser.add_argument('--end_month', type=int, default=12, help='1-12, inclusive')
     parser.add_argument('--end_year', type=int, default=2024, help='e.g. 2023, inclusive')
     parser.add_argument('--is_individual', action="store_true")
@@ -280,16 +320,22 @@ if __name__ == "__main__":
     parser.add_argument('--output_file', default="output/data.csv", type=str)
     parser.add_argument('--daily', action="store_true")
     parser.add_argument('--output_type', default="set_data", type=str)
+    parser.add_argument('--stored_only', action="store_true")
+    parser.add_argument('--individual_cards', default="", type=str)
     args = parser.parse_args()
 
     if args.daily:
       all_cards = get_cards_over_time_daily(args.start_month, args.start_year, args.end_month, args.end_year, args.is_individual, args.filter_cards)
     else:
-      all_cards = get_cards_over_time_monthly(args.start_month, args.start_year, args.end_month, args.end_year, args.is_individual, args.filter_cards)
+      all_cards = get_cards_over_time_monthly(args.start_month, args.start_year, args.end_month, args.end_year, args.is_individual, args.filter_cards, args.stored_only)
     if args.output_type == "set_data":
       processed_data = convert_card_data_to_set_data(all_cards)
       header = "Date,MH1,MH2,LTR,MH3,Standard"
     elif args.output_type == "most_played":
       processed_data = convert_card_data_to_most_played_data(all_cards)
       header = "Date,Percent,Name"
+    elif args.output_type == "individual_cards":
+      individual_cards = args.individual_cards.split(",")
+      processed_data = convert_card_data_to_specific_card_data(all_cards, individual_cards)
+      header = f"Date,{args.individual_cards}"
     export_data(processed_data, args.output_file, header)
