@@ -6,73 +6,66 @@ import argparse
 import os
 import calendar
 
-set_names = ["mh1", "mh2", "ltr", "mh3"]
-set_names_standard = set_names + ["standard"]
+# set_names = ["mh1", "mh2", "ltr", "mh3"]
+# set_names_standard = set_names + ["standard"]
 
-def get_sets_as_sets():
-  mh1 = set()
-  mh2 = set()
-  ltr = set()
-  mh3 = set()
-  sets = [mh1, mh2, ltr, mh3]
-  for i in range(len(sets)):
-    dataset_file_name = f"data/{set_names[i]}.txt"
+def get_sets_as_sets(separate_standard):
+  if not separate_standard:
+    set_names = ["MH1", "MH2", "LTR", "MH3", "ACR"]
+  else:
+    set_names = []
+    with open("data/set_codes.csv", "r") as set_file:
+      set_lines = set_file.readlines()
+      for set_line in set_lines[1:]:
+        set_line = set_line.strip()
+        code = set_line.split(",")[0]
+        set_names.append(code)
+  sets = {}
+  for set_name in set_names:
+    sets[set_name] = set()
+    dataset_file_name = f"data/sets/{set_name}.txt"
     with open(dataset_file_name) as f:
       cards = f.readlines()
       for card in cards:
-        sets[i].add(card.strip())
+        sets[set_name].add(card.strip())
+  sets["Other"] = set()
   return sets
 
-def get_challenges(month, year, format):
-  url = f"https://www.mtgo.com/decklists/{year}/{0 if month < 10 else ''}{month}?filter={format}+Challenge"
-  decklist_urls = None
-  while not decklist_urls:
-    response = requests.get(url)
-    soup = BeautifulSoup(response.text, 'html.parser')
-    decklist_urls = soup.find_all('li', class_='decklists-item')
-  challenge_urls = []
-  for deck_url in decklist_urls:
-    link_tag = deck_url.find('a')
-    if link_tag:
-        link = link_tag.get('href')
-        if f"{format}-challenge" in link:
-          challenge_urls.append(link)
-  return challenge_urls
-
-def get_cards_from_deck(deck, is_individual, filter_cards):
+#TODO: FILTERING
+def get_cards_from_deck(deck_file, is_individual, filter_cards):
   deck_cards = {}
-
-  card_list = []
-  if "main_deck" in deck:
-      card_list += deck["main_deck"]
-  if "sideboard_deck" in deck:
-      card_list += deck["sideboard_deck"]
-  
-  for card in card_list:
-    card_name = None
-    if "card_attributes" in card and "card_name" in card["card_attributes"]:
-        card_name = card["card_attributes"]["card_name"].replace(",", "")
-    quantity = 0
-    if is_individual and card not in deck_cards:
-      quantity = 1
-    elif "qty" in card and not is_individual:
-      quantity = int(card["qty"])
-    card_type = None
-    if "card_attributes" in card and "card_type" in card["card_attributes"]:
-      card_type = card["card_attributes"]["card_type"]
-
-    # filter should really take a function, but I kind of just manually adjusted this line based on what I was filtering
-    # is_acceptable = (not filter_cards) or (filter_cards and card_type and "ISCREA" in card_type)
-    is_acceptable = (not filter_cards) or (filter_cards and card_type and "LAND" not in card_type)
-    if card_name and quantity and is_acceptable:
+  with open(deck_file, "r") as file:
+    response = file.read()
+    soup = BeautifulSoup(response, 'html.parser')
+    
+    card_elements = soup.find_all("div", onclick=lambda x: x and x.startswith("AffCard"))
+    for card_element in card_elements:
+      quantity = int(card_element.text.split(" ")[0])
+      card_name = " ".join(card_element.text.split(" ")[1:])
+      card_name = card_name.replace(",", "")
       if card_name not in deck_cards:
         deck_cards[card_name] = 0
-      deck_cards[card_name] += quantity
+        if is_individual:
+          deck_cards[card_name] += 1
+      if not is_individual:
+        deck_cards[card_name] += quantity
   return deck_cards
+
+def get_card_from_event(event_id, date, is_individual, filter_cards, format, min_stars):
+  day, month, year = date.split("/")
+  event_folder = f"data/top8/{format}/{year}/{month}/{day}/{event_id}"
+  star_file = f"{event_folder}/stars.txt"
+  with open(star_file, "r") as file:
+    stars = int(file.readline())
+    if stars < min_stars:
+      return {}
+  _, _, deck_files = os.walk(event_folder)
+  for deck_file in deck_files:
+    deck_cards = get_cards_from_deck(deck_file, is_individual, filter_cards)
 
 def get_stored_challenge_data(link, cur_month, cur_year, cur_day, format):
   if cur_day:
-    date_folder_name = f"./data/{format}/{cur_year}/{cur_month}/{'0' if cur_day < 10 else ''}{cur_day}"
+    date_folder_name = f"./data/top8/{format}/{cur_year}/{cur_month}/{'0' if cur_day < 10 else ''}{cur_day}"
     for _, _, files in os.walk(date_folder_name):
       for file in files:
         if link == file:
@@ -80,7 +73,7 @@ def get_stored_challenge_data(link, cur_month, cur_year, cur_day, format):
             decklists = json.load(file)
             return decklists
   else:
-    month_folder_name = f"./data/{format}/{cur_year}/{cur_month}"
+    month_folder_name = f"./data/top8/{format}/{cur_year}/{cur_month}"
     for _, dirs, _ in os.walk(month_folder_name):
       for dir in dirs:
         dir = f"{month_folder_name}/{dir}"
@@ -111,7 +104,7 @@ def get_remote_challenge_data(link, cur_month, cur_year, format):
   if decklists:
     day = data["starttime"].split(" ")[0].split("-")[2]
     clean_link = link.split("/")[-1]    
-    file_name = f"./data/{format}/{cur_year}/{cur_month}/{day}/{clean_link}"
+    file_name = f"./data/top8/{format}/{cur_year}/{cur_month}/{day}/{clean_link}"
     os.makedirs(os.path.dirname(file_name), exist_ok=True)
     with open(file_name, "w") as file:
       json.dump(decklists, file, indent=4)
@@ -137,7 +130,7 @@ def get_cards_from_challenge(link, is_individual, filter_cards, cur_month, cur_y
 def get_cards_for_month(cur_month, cur_year, is_individual, filter_cards, stored_only, format):
   if stored_only:
     challenges = []
-    month_folder_name = f"./data/{format}/{cur_year}/{cur_month}"
+    month_folder_name = f"./data/top8/{format}/{cur_year}/{cur_month}"
     for _, dirs, _ in os.walk(month_folder_name):
       for dir in dirs:
         dir = f"{month_folder_name}/{dir}"
@@ -158,7 +151,7 @@ def get_cards_for_month(cur_month, cur_year, is_individual, filter_cards, stored
 
 def get_cards_for_day(month, year, day, is_individual, filter_cards, format):
   daily_cards = {}
-  folder = f'./data/{format}/{year}/{month}/{"0" if day < 10 else ""}{day}'
+  folder = f'./data/top8/{format}/{year}/{month}/{"0" if day < 10 else ""}{day}'
   for root, dirs, files in os.walk(folder):
     for file in files:
       challenge_cards = get_cards_from_challenge(file, is_individual, filter_cards, month, year, format, cur_day=day)  
@@ -186,10 +179,10 @@ def get_cards_over_time_monthly(start_month, start_year, end_month, end_year, is
       break
   return all_cards
 
-def get_cards_over_time_daily(start_month, start_year, end_month, end_year, is_individual, filter_cards, format):
+def get_cards_over_time_daily(start_day, start_month, start_year, end_month, end_year, is_individual, filter_cards, format):
   month = start_month
   year = start_year
-  day = 1
+  day = start_day
   all_cards = {}
   while True:    
     daily_cards = get_cards_for_day(month, year, day, is_individual, filter_cards, format)
@@ -207,11 +200,11 @@ def get_cards_over_time_daily(start_month, start_year, end_month, end_year, is_i
       break
   return all_cards
 
-def get_set_of_card(cardname):
-  for i in range(len(sets)):
-    if cardname in sets[i]:
-      return set_names[i]
-  return "standard"
+def get_set_of_card(cardname, sets):
+  for set_name in sets:
+    if cardname in sets[set_name]:
+      return set_name
+  return "Other"
 
 def get_percents(cards):
   total = 0
@@ -220,15 +213,15 @@ def get_percents(cards):
   if total == 0:
     return None
   for key in cards:
-    cards[key] = int(100 * cards[key] / total)
+    cards[key] = round(100 * cards[key] / total, 2)
   return cards
 
-def convert_card_data_to_set_data(all_cards):
+def convert_card_data_to_set_data(all_cards, sets):
   set_data = []
   for key in all_cards:
-    period_set_data = {set: 0 for set in set_names_standard}
+    period_set_data = {set: 0 for set in sets.keys()}
     for card_name in all_cards[key]:
-      card_set = get_set_of_card(card_name)
+      card_set = get_set_of_card(card_name, sets)
       period_set_data[card_set] += all_cards[key][card_name]
     percents = get_percents(period_set_data)
     if percents:
@@ -296,10 +289,9 @@ def export_data(processed_data, file_name, header):
       file.write(line)
       file.write("\n")
 
-sets = get_sets_as_sets()
-
 if __name__ == "__main__":
     parser = argparse.ArgumentParser()
+    parser.add_argument('--start_day', default=1, type=int, help='1-31, inclusive')
     parser.add_argument('--start_month', default=5, type=int, help='1-12, inclusive')
     parser.add_argument('--start_year', type=int, default=2017, help='e.g. 2023, inclusive')
     parser.add_argument('--end_month', type=int, default=12, help='1-12, inclusive')
@@ -312,16 +304,18 @@ if __name__ == "__main__":
     parser.add_argument('--stored_only', action="store_true")
     parser.add_argument('--individual_cards', default="", type=str)
     parser.add_argument('--format', default="modern", type=str)
+    parser.add_argument('--separate_standard', action="store_true")
     args = parser.parse_args()
 
     if args.daily:
-      all_cards = get_cards_over_time_daily(args.start_month, args.start_year, args.end_month, args.end_year, args.is_individual, args.filter_cards, args.format)
+      all_cards = get_cards_over_time_daily(args.start_day, args.start_month, args.start_year, args.end_month, args.end_year, args.is_individual, args.filter_cards, args.format)
     else:
       all_cards = get_cards_over_time_monthly(args.start_month, args.start_year, args.end_month, args.end_year, args.is_individual, args.filter_cards, args.stored_only, args.format)
     
     if args.output_type == "set_data":
-      processed_data = convert_card_data_to_set_data(all_cards)
-      header = "Date,MH1,MH2,LTR,MH3,Standard"
+      sets = get_sets_as_sets(args.separate_standard)
+      processed_data = convert_card_data_to_set_data(all_cards, sets)
+      header = f"Date,{','.join(sets.keys())}"
     elif args.output_type == "most_played":
       processed_data = convert_card_data_to_most_played_data(all_cards)
       header = "Date,Percent,Name"
