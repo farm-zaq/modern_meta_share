@@ -1,0 +1,543 @@
+
+	<!DOCTYPE HTML>
+	<html lang="en">
+	
+<head>
+<title>Rb Hollow One - Ryan Leverone @ mtgtop8.com</title>
+<link rel="icon" type="image/png" href="https://www.mtgtop8.com/graph/favicon.png">
+<link href="/styles.css" rel="stylesheet" type="text/css">
+
+<script type="text/javascript" src="https://cache.consentframework.com/js/pa/39346/c/PMQm4/stub"></script>
+<script type="text/javascript" src="https://choices.consentframework.com/js/pa/39346/c/PMQm4/cmp" async></script>
+
+	<script async="async" src="//cdn-a.yieldlove.com/v2/yieldlove.js?mtgtop8.com"></script>
+	<script async='async' src='https://securepubads.g.doubleclick.net/tag/js/gpt.js'></script>
+	<script>
+	var googletag = googletag || {};
+	googletag.cmd = googletag.cmd || [];
+	googletag.cmd.push(function() {
+	googletag.pubads().disableInitialLoad();
+	googletag.enableServices();
+	});
+	</script>
+<!-- Google tag (gtag.js) -->
+	<script async src="https://www.googletagmanager.com/gtag/js?id=G-0Q2DH80JYF"></script>
+	<script>
+	  window.dataLayer = window.dataLayer || [];
+	  function gtag(){dataLayer.push(arguments);}
+	  gtag('js', new Date());
+
+	  gtag('config', 'G-0Q2DH80JYF');
+	</script>
+
+<script>
+
+var x
+var y
+
+function MAJCoords(evt){
+	x=evt.clientX
+	y=evt.clientY
+	return false;	
+}
+
+
+function AffOther(pref){
+	odel=document.getElementById("other_div");
+	var r = odel.getBoundingClientRect();
+
+	if (document.documentElement && document.documentElement.scrollTop) {theTop = document.documentElement.scrollTop;}
+	else if (document.body) {theTop = document.body.scrollTop;}
+	
+	if(document.getElementById("other_tooltip").style.visibility=="visible"){
+		document.getElementById("other_tooltip").style.visibility="hidden";
+	}
+	else {
+		document.getElementById("other_tooltip").style.width=(r.right-r.left+80)+"px";
+		document.getElementById("other_tooltip").style.left=(r.left-40)+"px";
+		document.getElementById("other_tooltip").style.top=(theTop+r.top+30)+"px";
+		document.getElementById("other_tooltip").style.visibility="visible";
+	}
+	
+}
+
+function EffOther(){document.getElementById('other_tooltip').style.visibility="hidden";}
+
+function AffMTGA(pref){
+	odel=document.getElementById("mtga_div");
+	var r = odel.getBoundingClientRect();
+
+	if (document.documentElement && document.documentElement.scrollTop) {theTop = document.documentElement.scrollTop;}
+	else if (document.body) {theTop = document.body.scrollTop;}
+	
+	if(document.getElementById("mtga_tooltip").style.visibility=="visible"){
+		document.getElementById("mtga_tooltip").style.visibility="hidden";
+	}
+	else {
+		document.getElementById("mtga_tooltip").style.width=(r.right-r.left+80)+"px";
+		document.getElementById("mtga_tooltip").style.left=(r.left-40)+"px";
+		document.getElementById("mtga_tooltip").style.top=(theTop+r.top+30)+"px";
+		document.getElementById("mtga_tooltip").style.visibility="visible";
+	}
+	
+}
+
+function EffMTGA(){document.getElementById("mtga_tooltip").style.visibility="hidden";}
+
+</script>
+</head>
+	<body onmousemove="MAJCoords(event)">
+	<div align=center class=page>
+	<div style="max-width:1280px;" valign=top>
+<div id=other_tooltip style="visibility:hidden;width:200px;z-index:10;position: absolute;box-shadow: 0px 10px 10px #666666;padding:2px;background:white;border: 1px white solid;">
+
+	<div id=other_tooltip_content style="padding:3px;" align=center>
+	<div style="padding-bottom:15px;"><div  style="position:relative;"><a class=menu_item href=/format?f=PEA>PEASANT</a></div></div>
+	<div style="padding-bottom:15px;"><div  style="position:relative;"><a class=menu_item href=/format?f=BL>BLOCK</a></div></div>
+	<div style="padding-bottom:15px;"><div  style="position:relative;"><a class=menu_item href=/format?f=EX>EXTENDED</a></div></div>
+	<div style="padding-bottom:15px;"><div  style="position:relative;"><a class=menu_item href=/format?f=HIGH>HIGHLANDER</a></div></div>
+	<div style="padding-bottom:15px;"><div  style="position:relative;"><a class=menu_item href=/format?f=CHL>CANADIAN HIGHLANDER</a></div></div>
+	<div onclick="EffOther();" style="cursor:pointer;" class=S12>close</div>
+	</div>
+
+</div>
+<div id=mtga_tooltip style="visibility:hidden;width:200px;z-index:10;position: absolute;box-shadow: 0px 10px 10px #666666;padding:2px;background:white;border: 1px white solid;">
+
+	<div id=mtga_tooltip_content style="padding:3px;" align=center>
+	<div style="padding-bottom:15px;"><div  style="position:relative;"><a class=menu_item href=/format?f=EXP>EXPLORER</a></div></div>
+	<div style="padding-bottom:15px;"><div  style="position:relative;"><a class=menu_item href=/format?f=HI>HISTORIC</a></div></div>
+	<div style="padding-bottom:15px;"><div  style="position:relative;"><a class=menu_item href=/format?f=ALCH>ALCHEMY</a></div></div>
+	<div onclick="EffMTGA();" style="cursor:pointer;" class=S12>close</div>
+	</div>
+
+</div>
+<div style="border:1px:black solid;display:flex;justify-content:space-evenly;align-items:center;flex-wrap:wrap;">
+  <div>
+    <div><a href=/index><img style="width:250px;" src=/graph/title.png></a></div>
+    <div class=G16 style="margin-top:5px;">netdecking with the stars</div>
+  </div> 	
+    </td>
+    <div>
+      <div style="width:728px;height:90px;overflow:hidden;">
+<!-- Yieldlove AdTag - mtgtop8.com_d_728x90_1 -->
+<div id='div-gpt-ad-1407836193899-0'>
+  <script type='text/javascript'>
+    googletag.cmd.push(function() {
+      googletag.defineSlot('/53015287,22663084435/mtgtop8.com_d_728x90_1', [728, 90], 'div-gpt-ad-1407836193899-0').addService(googletag.pubads());
+      googletag.display('div-gpt-ad-1407836193899-0');
+    });
+  </script>
+</div></div></td>
+  </div>
+</div>
+
+<div style="position:relative;">
+<div style="margin:5px 0px 5px 0px;display:flex;justify-content:space-evenly;align-items:center;">
+<div  style="position:relative;width:160px;"><a class=menu_item href=/format?f=ST>STANDARD</a></div><div  style="position:relative;width:160px;"><a class=menu_item href=/format?f=PI>PIONEER</a></div><div  style="position:relative;width:160px;"><a class=menu_item href=/format?f=MO>MODERN</a></div><div  style="position:relative;width:160px;"><a class=menu_item href=/format?f=LE>LEGACY</a></div><div  style="position:relative;width:160px;"><a class=menu_item href=/format?f=VI>VINTAGE</a></div><div id=mtga_div onclick="AffMTGA('');" style="cursor:pointer;width:160px;"><a class=menu_item>MTG <img src=/graph/online/mtga.png>rena</a></div><div  style="position:relative;width:160px;"><a class=menu_item href=search>SEARCH</a></div>
+</div>
+<div style="margin:0px 0px 5px 0px;display:flex;justify-content:space-evenly;align-items:center;">
+<div  style="position:relative;width:160px;"><a class=menu_item href=/format?f=PAU>PAUPER</a></div><div  style="position:relative;width:160px;"><a class=menu_item href=/format?f=cEDH>cEDH</a></div><div  style="position:relative;width:160px;"><a class=menu_item_14 href=/format?f=EDH>DUEL COMMANDER</a></div><div  style="position:relative;width:160px;"><a class=menu_item href=/format?f=PREM>PREMODERN</a></div><div  style="position:relative;width:160px;"><a class=menu_item href=format_limited>LIMITED</a><img style="display:inline-block;height:18px;vertical-align:-12%;" src=/graph/symbols/fdn-c.png></div><div id=other_div onclick="AffOther('');" style="cursor:pointer;width:160px;"><a class=menu_item>OTHER</a></div><div  style="position:relative;width:160px;"><a class=menu_item href=submit>SUBMIT</a></div>
+</div>
+<div style="position:absolute;top:8px;right:180px;display:block;"><img src=/graph/star.png></div><div style="position:absolute;top:37px;right:180px;display:block;"><img src=/graph/star.png></div>
+</div>
+<script>
+cur_id="";
+
+b_language="";
+prev_deck=308962;
+next_deck=308964;
+display="txt";
+
+function ShowList(cl){
+	if(cl=="top8"){o_cl="pts";}else{o_cl="top8";}
+	document.getElementById(o_cl+"_list").style.display="none";
+	document.getElementById(cl+"_list").style.display="block";
+	
+	//document.getElementById(o_cl+"_header").style.borderTop="2px white solid";
+	document.getElementById(o_cl+"_header").style.borderBottom="4px #00528b solid";
+	//document.getElementById(cl+"_header").style.borderTop="2px #cccccc solid";
+	document.getElementById(cl+"_header").style.borderBottom="4px white solid";
+}
+
+
+RequestContent("price_tcg?f=MO&d=308963", "tcg_price" );
+function AffCard(id,pname,MTGO_ID,ch_price){
+	if(cur_id!=""){
+		if (document.getElementById('md'+cur_id)) {document.getElementById('md'+cur_id).className='deck_line hover_tr';}
+		if (document.getElementById('sb'+cur_id)) {document.getElementById('sb'+cur_id).className='deck_line hover_tr';}
+	}
+	if(id!=""){
+	if (document.getElementById('md'+id)) {document.getElementById('md'+id).className='deck_line chosen_tr';}
+	if (document.getElementById('sb'+id)) {document.getElementById('sb'+id).className='deck_line chosen_tr';}
+	}
+	RequestContent("deck_card?gamerid="+id+"&MTGO_ID="+MTGO_ID+"&ch_price="+ch_price+"&pname="+pname, "card_div" );
+	//setTimeout(ShowCardLink, 500);
+	cur_id=id;
+}
+
+function AffCardV(id,pname,MTGO_ID,ch_price){
+	RequestContent("deck_card?gamerid="+id+"&MTGO_ID="+MTGO_ID+"&ch_price="+ch_price+"&pname="+pname, "card_div_content" );
+	
+	cur_id=id;
+
+ 	if (document.documentElement && document.documentElement.scrollTop) {
+		theTop = document.documentElement.scrollTop
+	}
+	else if (document.body) {
+		theTop = document.body.scrollTop
+	}
+	
+	
+	
+	newx=x-400;
+
+	if(newx<20){newx=20;}
+	if(newx+800>window.innerWidth){newx=window.innerWidth-820;}
+	
+	
+	document.getElementById("card_div").style.left=newx+"px";
+	document.getElementById("card_div").style.top=(theTop+y+40)+"px";
+	document.getElementById("card_div").style.visibility="visible";
+
+}
+
+function CloseCard(){
+	document.getElementById("card_div").style.visibility="hidden";
+	document.getElementById("card_div_content").innerHTML="";
+}
+
+function ShowCardLink(){
+	if(b_language=="fr"){
+		document.getElementById("card_infos_link").innerHTML="<a target=_blank href=mv_redir?c="+cur_id+">Plus d'informations sur cette carte<br>sur magic-ville.com</a>";
+	}
+}
+
+function RequestContent(my_url,my_dest) {
+var xhr_object = null;
+
+if(window.XMLHttpRequest) // Firefox
+   xhr_object = new XMLHttpRequest();
+else if(window.ActiveXObject) // Internet Explorer
+   xhr_object = new ActiveXObject("Microsoft.XMLHTTP");
+
+
+xhr_object.open("POST", my_url, true);
+
+xhr_object.onreadystatechange = function() {
+   if(xhr_object.readyState == 4) document.getElementById(my_dest).innerHTML=xhr_object.responseText;
+}
+
+xhr_object.send(null);
+}
+
+function AffChatGPT(pref){
+	ocgpt=document.getElementById("ChatGPT_button_div");
+	var r = ocgpt.getBoundingClientRect();
+
+	if (document.documentElement && document.documentElement.scrollTop) {theTop = document.documentElement.scrollTop;}
+	else if (document.body) {theTop = document.body.scrollTop;}
+	
+	document.getElementById("ChatGPT_tooltip").style.width="120px";
+	//document.getElementById("ChatGPT_tooltip").style.width=(r.right-r.left+200)+"px";
+	document.getElementById("ChatGPT_tooltip").style.left=(r.left-60)+"px";
+	document.getElementById("ChatGPT_tooltip").style.top=(theTop+r.top+22)+"px";
+	document.getElementById("ChatGPT_tooltip").style.visibility="visible";
+	
+}
+
+function AffArena(pref){
+	omtga=document.getElementById("MTGA_button_div");
+	var r = omtga.getBoundingClientRect();
+
+	if (document.documentElement && document.documentElement.scrollTop) {theTop = document.documentElement.scrollTop;}
+	else if (document.body) {theTop = document.body.scrollTop;}
+	
+	document.getElementById("MTGA_tooltip").style.width=(r.right-r.left+200)+"px";
+	document.getElementById("MTGA_tooltip").style.left=(r.left-100)+"px";
+	document.getElementById("MTGA_tooltip").style.top=(theTop+r.top+22)+"px";
+	document.getElementById("MTGA_tooltip").style.visibility="visible";
+	document.getElementById("MTGA_deck").innerHTML="<iframe style=\"display:none;width:0px;height:0px;\" src=mtgarena?d=308963>";
+	
+}
+
+function AffCompanion(div_id){
+	omtga=document.getElementById("companion_"+div_id);
+	var r = omtga.getBoundingClientRect();
+
+	if (document.documentElement && document.documentElement.scrollTop) {theTop = document.documentElement.scrollTop;}
+	else if (document.body) {theTop = document.body.scrollTop;}
+
+	document.getElementById("companion_tooltip").style.left=(r.left-100)+"px";
+	document.getElementById("companion_tooltip").style.top=(theTop+r.top+22)+"px";
+	document.getElementById("companion_tooltip").style.visibility="visible";
+	
+}
+
+function EffCompanion(){
+	document.getElementById("companion_tooltip").style.visibility="hidden";
+}
+
+function EffArena(){
+	document.getElementById("MTGA_tooltip").style.visibility="hidden";
+	document.getElementById("MTGAOK").style.visibility="hidden";
+}
+
+function EffChatGPT(){
+	document.getElementById("ChatGPT_tooltip").style.visibility="hidden";
+}
+
+
+function CopyMTGA(lang){
+	document.getElementById("MTGAdecklist").innerHTML=document.getElementById("MTGAdecklist"+lang).value;
+	copyText = document.getElementById("MTGAdecklist");
+	copyText.select();
+	document.execCommand("copy");
+	document.getElementById("MTGAOK").style.visibility="visible";
+}
+
+function Tap(ref) {
+	if(document.getElementById("CardScan_"+ref).className=="card_box_med_180Y") {
+		document.getElementById("CardScan_"+ref).className="card_box_med";
+		document.getElementById("CardScanBack_"+ref).className="card_box_med_180Ya";
+	}
+	else {
+		document.getElementById("CardScan_"+ref).className="card_box_med_180Y";
+		document.getElementById("CardScanBack_"+ref).className="card_box_med";
+	}
+
+}
+
+function checkKeycode(event) {
+	var keyDownEvent = event || window.event,
+	keycode = (keyDownEvent.which) ? keyDownEvent.which : keyDownEvent.keyCode;
+	
+	//Esc
+	if(keycode==27 & display=="visual"){ToggleDecks();}
+	//left arrow
+	else if(keycode==37 && prev_deck>0){window.open("event?e=17585&d="+prev_deck+"f=MO&show_pts=","_top");}
+	//right arrow
+	else if(keycode==39 && next_deck>0){window.open("event?e=17585&d="+next_deck+"f=MO&show_pts=","_top");}
+	
+}
+
+
+function LoadExpl(note){
+	window.location.href="event?"+note+"&explain_deck=Y";
+}
+
+
+
+document.onkeydown = checkKeycode;
+
+</script>
+<div id=MTGA_tooltip style="visibility:hidden;z-index:10;position: absolute;background:white;box-shadow: 0px 0px 10px #666666;padding:2px;border-radius: 5px;border: 1px grey solid;">
+
+	<div id=MTGA_tooltip_content style="padding:3px;" align=center>
+	<div class=G10>Choose the language you use in MTG Arena.</div>
+	<div style="padding:2px;">
+	<table>
+	<tr>
+	<td width=33% align=center><a href=# onclick="CopyMTGA('EN')">English</a></td>
+	<td width=33% align=center><a href=# onclick="CopyMTGA('FR')">French</a></td>
+	<td width=33% align=center><a href=# onclick="CopyMTGA('DE')">German</a></td>
+	</tr>
+	<tr>
+	<td width=33% align=center><a href=# onclick="CopyMTGA('IT')">Italian</a></td>
+	<td width=33% align=center><a href=# onclick="CopyMTGA('ES')">Spanish</a></td>
+	<td width=33% align=center><a href=# onclick="CopyMTGA('PT')">Portuguese</a></td>
+	</tr>
+	</table>
+	</div>
+	<textarea id=MTGAdecklistEN style="display:none;width:200px;height:150px;"></textarea>
+	<textarea id=MTGAdecklistFR style="display:none;width:200px;height:150px;"></textarea>
+	<textarea id=MTGAdecklistDE style="display:none;width:200px;height:150px;"></textarea>
+	<textarea id=MTGAdecklistIT style="display:none;width:200px;height:150px;"></textarea>
+	<textarea id=MTGAdecklistES style="display:none;width:200px;height:150px;"></textarea>
+	<textarea id=MTGAdecklistPT style="display:none;width:200px;height:150px;"></textarea>
+	<textarea id=MTGAdecklist style="width:200px;height:150px;"></textarea>
+	<div id=MTGAOK class=V10 style="visibility:hidden;margin:2px;">Now you can click "Import" in MTG Arena.</div>
+	<div id=MTGA_deck style="padding:3px;" align=center></div>
+	<div onclick="EffArena();" style="cursor:pointer;" class=S12>close</div>
+	</div>
+
+</div>
+<div id=ChatGPT_tooltip style="visibility:hidden;z-index:10;position: absolute;background:white;box-shadow: 0px 0px 10px #666666;padding:2px;border-radius: 5px;border: 1px grey solid;">
+
+	<div id=ChatGPT_tooltip_content style="padding:3px;" align=center>
+
+	<div style="padding:2px;">
+	<table border=0 celpadding=2 callspacing=0>
+	<tr>
+	<td width=33% align=center><div style="cursor:pointer;" onclick="LoadExpl('e=17585&d=308963&f=MO&exp_lang=EN');";><img src=/graph/flags/EN.png style="height:15px;"></div></td>
+	<td width=33% align=center><div style="cursor:pointer;" onclick="LoadExpl('e=17585&d=308963&f=MO&exp_lang=FR');";><img src=/graph/flags/FR.png style="height:15px;"></div></td>
+	<td width=33% align=center><div style="cursor:pointer;" onclick="LoadExpl('e=17585&d=308963&f=MO&exp_lang=DE');";><img src=/graph/flags/DE.png style="height:15px;"></div></td>
+	</tr>
+	<tr>
+	<td width=33% align=center><div style="cursor:pointer;" onclick="LoadExpl('e=17585&d=308963&f=MO&exp_lang=IT');";><img src=/graph/flags/IT.png style="height:15px;"></div></td>
+	<td width=33% align=center><div style="cursor:pointer;" onclick="LoadExpl('e=17585&d=308963&f=MO&exp_lang=ES');";><img src=/graph/flags/ES.png style="height:15px;"></div></td>
+	<td width=33% align=center><div style="cursor:pointer;" onclick="LoadExpl('e=17585&d=308963&f=MO&exp_lang=PT');";><img src=/graph/flags/PT.png style="height:15px;"></div></td>
+	</tr>
+	</table>
+	</div>
+	<div onclick="EffChatGPT();" style="cursor:pointer;" class=S12>close</div>
+	</div>
+
+</div>
+<div id=companion_tooltip style="visibility:hidden;z-index:10;position: absolute;background:white;box-shadow: 0px 0px 10px #666666;padding:2px;border-radius: 5px;border: 1px grey solid;">
+
+	<div id=companion_tooltip_content style="width:300px;padding:3px;" align=center>
+	 <div class=S12>Companion card</div>
+	 <div class=G12 align=justify>You may put it into your hand from outside the game for <img src=/graph/manas_c/3.png style="vertical-align:-20%;"> any time you could cast a sorcery.</div>
+	<div onclick="EffCompanion();" style="cursor:pointer;margin-top:6px;" class=S12>close</div>
+	</div>
+
+</div>
+<div class=w_title align=center>
+  <div style="display:flex;justify-content:space-evenly;align-items:center;">
+    <div class=event_title>November Titanium Challenge</div>
+    <div class=event_title><a class=arrow href=?e=17585&d=308962&f=MO>&larr;</a></div>
+    <div class=event_title>#2 Rb Hollow One - <a class=player_big href=search?player=Ryan+Leverone>Ryan Leverone</a></div>
+    <div class=event_title><a class=arrow href=?e=17585&d=308964&f=MO>&rarr;</a></div>
+  </div>
+  <div class=c_tl></div><div class=c_tr></div><div class=c_br></div>
+</div>
+	<div style="display:flex;">
+	  <div style="width:25%;"><div style="background:#00528b;padding-bottom:4px;position:relative;"><div style="margin:0px 4px 0px 4px;">
+<div class=S14 align=center style="background:white;margin-bottom:4px;">
+	<div class=meta_arch style="padding:2px;">Modern <img src=/graph/star.png></div>
+	<div style="margin-bottom:5px;">40 players - 19/11/17</div>
+	<div class=S10 style="width:250px;overflow:hidden;padding-bottom:5px;"></div>
+	
+</div>
+			<div class=hover_tr style="padding:3px 0px 3px 0px;" align=left>
+			  <div style="display:flex;align-items:center;">
+			    <div style="width:42px;" align=center class=S14>1</div>
+			    <div style="width:80px;height:40px;background:black;"><a href=?e=17585&d=308962&f=MO><img src=/metas_thumbs/196.jpg></a></div>
+			    <div style="flex:1;">
+			      <div class=S14 style="width:100%;padding-left:4px;margin-bottom:4px;"><a href=?e=17585&d=308962&f=MO>Infect</a> </div>
+			      <div style="margin-right:10px;" align=right class=G11><a class=player href=search?player=Gordon+Callahan>Gordon Callahan</a></div>
+			    </div>
+			  </div>
+			</div>
+			<div class=chosen_tr style="padding:3px 0px 3px 0px;" align=left>
+			  <div style="display:flex;align-items:center;">
+			    <div style="width:42px;" align=center class=S14>2</div>
+			    <div style="width:80px;height:40px;background:black;"><a href=?e=17585&d=308963&f=MO><img src=/metas_thumbs/767.jpg></a></div>
+			    <div style="flex:1;">
+			      <div class=S14 style="width:100%;padding-left:4px;margin-bottom:4px;"><a href=?e=17585&d=308963&f=MO>Rb Hollow One</a> </div>
+			      <div style="margin-right:10px;" align=right class=G11><a class=player href=search?player=Ryan+Leverone>Ryan Leverone</a></div>
+			    </div>
+			  </div>
+			</div>
+			<div class=hover_tr style="padding:3px 0px 3px 0px;" align=left>
+			  <div style="display:flex;align-items:center;">
+			    <div style="width:42px;" align=center class=S14>3-4</div>
+			    <div style="width:80px;height:40px;background:black;"><a href=?e=17585&d=308964&f=MO><img src=/metas_thumbs/189.jpg></a></div>
+			    <div style="flex:1;">
+			      <div class=S14 style="width:100%;padding-left:4px;margin-bottom:4px;"><a href=?e=17585&d=308964&f=MO>Affinity</a> </div>
+			      <div style="margin-right:10px;" align=right class=G11><a class=player href=search?player=Justin+Proven%E7al>Justin Provençal</a></div>
+			    </div>
+			  </div>
+			</div>
+			<div class=hover_tr style="padding:3px 0px 3px 0px;" align=left>
+			  <div style="display:flex;align-items:center;">
+			    <div style="width:42px;" align=center class=S14>3-4</div>
+			    <div style="width:80px;height:40px;background:black;"><a href=?e=17585&d=308965&f=MO><img src=/metas_thumbs/566.jpg></a></div>
+			    <div style="flex:1;">
+			      <div class=S14 style="width:100%;padding-left:4px;margin-bottom:4px;"><a href=?e=17585&d=308965&f=MO>Elves!</a> </div>
+			      <div style="margin-right:10px;" align=right class=G11><a class=player href=search?player=Andrew+Munson>Andrew Munson</a></div>
+			    </div>
+			  </div>
+			</div>
+			<div class=hover_tr style="padding:3px 0px 3px 0px;" align=left>
+			  <div style="display:flex;align-items:center;">
+			    <div style="width:42px;" align=center class=S14>5-8</div>
+			    <div style="width:80px;height:40px;background:black;"><a href=?e=17585&d=308968&f=MO><img src=/metas_thumbs/552.jpg></a></div>
+			    <div style="flex:1;">
+			      <div class=S14 style="width:100%;padding-left:4px;margin-bottom:4px;"><a href=?e=17585&d=308968&f=MO>Eldrazi Tron</a> </div>
+			      <div style="margin-right:10px;" align=right class=G11><a class=player href=search?player=Stephen+Zhang>Stephen Zhang</a></div>
+			    </div>
+			  </div>
+			</div>
+			<div class=hover_tr style="padding:3px 0px 3px 0px;" align=left>
+			  <div style="display:flex;align-items:center;">
+			    <div style="width:42px;" align=center class=S14>5-8</div>
+			    <div style="width:80px;height:40px;background:black;"><a href=?e=17585&d=308969&f=MO><img src=/metas_thumbs/636.jpg></a></div>
+			    <div style="flex:1;">
+			      <div class=S14 style="width:100%;padding-left:4px;margin-bottom:4px;"><a href=?e=17585&d=308969&f=MO>Grixis Death's Shadow</a> </div>
+			      <div style="margin-right:10px;" align=right class=G11><a class=player href=search?player=Thomas+Christiansen>Thomas Christiansen</a></div>
+			    </div>
+			  </div>
+			</div>
+			<div class=hover_tr style="padding:3px 0px 3px 0px;" align=left>
+			  <div style="display:flex;align-items:center;">
+			    <div style="width:42px;" align=center class=S14>5-8</div>
+			    <div style="width:80px;height:40px;background:black;"><a href=?e=17585&d=308966&f=MO><img src=/metas_thumbs/183.jpg></a></div>
+			    <div style="flex:1;">
+			      <div class=S14 style="width:100%;padding-left:4px;margin-bottom:4px;"><a href=?e=17585&d=308966&f=MO>Jund</a> </div>
+			      <div style="margin-right:10px;" align=right class=G11><a class=player href=search?player=Craig+Stillman>Craig Stillman</a></div>
+			    </div>
+			  </div>
+			</div>
+			<div class=hover_tr style="padding:3px 0px 3px 0px;" align=left>
+			  <div style="display:flex;align-items:center;">
+			    <div style="width:42px;" align=center class=S14>5-8</div>
+			    <div style="width:80px;height:40px;background:black;"><a href=?e=17585&d=308967&f=MO><img src=/metas_thumbs/392.jpg></a></div>
+			    <div style="flex:1;">
+			      <div class=S14 style="width:100%;padding-left:4px;margin-bottom:4px;"><a href=?e=17585&d=308967&f=MO>Titanshift</a> </div>
+			      <div style="margin-right:10px;" align=right class=G11><a class=player href=search?player=Kevin+Luu>Kevin Luu</a></div>
+			    </div>
+			  </div>
+			</div></div><div class=c_bl></div><div class=c_br></div></div></div>
+	  <div style="width:75%;padding:5px;">
+		
+		<div style="display:flex;justify-content:space-evenly;">
+			
+		<div class=Nav_buy onclick="window.open('shop?d=308963&s=ck')">
+		  <div class=Shop_title>Card Kingdom</div>
+		  <div class="S14 Nav_buy_price">$<span class=O14>298</span> <span class=G11>(NM)</span></div>
+		   <div class=c_tl></div><div class=c_bl></div>
+		</div>
+		    
+		<div class=Nav_buy onclick="window.open('shop?d=308963&s=tcg')">
+		  <div class=Shop_title>TCGplayer</div>
+		  <div class="Nav_buy_price S14"><div id=tcg_price style="display:inline-block;" class=S14>$<span class=O14>939</span> <span class=G10>(Avg.)</span></div></div>
+		   <div class=c_tl></div><div class=c_bl></div>
+		</div>
+		    
+		<div class=Nav_buy onclick="window.open('shop?d=308963&s=mt')">
+		   <div class=Shop_title>Manatraders</div>
+		  <div class="Nav_buy_price S14"><div class=G10>Rent for $<span class=O14>9.95</span></div></div>
+		  <div class=c_tl></div><div class=c_bl></div>
+		</div>
+		   
+			
+		<div class=Nav_buy onclick="window.open('shop?d=308963&s=ch')">
+		  <div class=Shop_title>Cardhoarder</div>
+		  <div class="Nav_buy_price S14"><span class=O14>21</span> TIX</div>
+		   <div class=c_tl></div><div class=c_bl></div>
+		</div>
+		</div>
+		<div style="display:flex;justify-content:space-evenly;margin-top:5px;">
+		  <div class=S14><a href=?e=17585&d=308963&f=MO&switch=visual>Switch to Visual</a></div>
+		  <div class=S14>MD <span class=O14>60</span> SB <span class=O14>15</span></div>
+		  <div class=S14> <div style="display:inline-block;" class=fakelink onclick="LoadExpl('e=17585&d=308963&f=MO');";>Explain! (AI) <img src=/graph/flags/EN.png style="height:15px;vertical-align:-20%;"></div><div id=ChatGPT_button_div style="cursor:pointer;display:inline-block;margin-left:5px;margin-right:10px;" onclick="AffChatGPT('');"><img src=/graph/expand.png style="height:14px;vertical-align:-20%;"></div></div>
+          <div class=S14>Export &rarr; <div style="display:inline-block;margin-right:10px;"><a href=mtgo?d=308963&f=Modern_Rb_Hollow_One_by_Ryan_Leverone><img style="vertical-align:-5%;height:12px;" src=graph/online/mtgo.png> MTGO</a></div><div style="display:inline-block;"><a href=dec?d=308963&f=Modern_Rb_Hollow_One_by_Ryan_Leverone>.dec</a></div></div>
+		  <div class=S14><a href=archetype?a=767>Hollow One decks</a></div>
+		</div><div style="display:flex;align-content:stretch;"><div style="margin:3px;flex:1;" align=left><div class=O14>18 LANDS</div><div id=mdsom224 class="deck_line hover_tr" onclick="AffCard('som224','Blackcleave+Cliffs','','');">4 <span class=L14>Blackcleave Cliffs</span> </div><div id=mddis171 class="deck_line hover_tr" onclick="AffCard('dis171','Blood+Crypt','','');">3 <span class=L14>Blood Crypt</span> </div><div id=mdons313 class="deck_line hover_tr" onclick="AffCard('ons313','Bloodstained+Mire','','');">4 <span class=L14>Bloodstained Mire</span> </div><div id=mdabu170 class="deck_line hover_tr" onclick="AffCard('abu170','Mountain','','');">2 <span class=L14>Mountain</span> </div><div id=mdgui163 class="deck_line hover_tr" onclick="AffCard('gui163','Stomping+Ground','','');">1 <span class=L14>Stomping Ground</span> </div><div id=mdabu249 class="deck_line hover_tr" onclick="AffCard('abu249','Swamp','','');">1 <span class=L14>Swamp</span> </div><div id=mdons330 class="deck_line hover_tr" onclick="AffCard('ons330','Wooded+Foothills','','');">3 <span class=L14>Wooded Foothills</span> </div><div class=O14 style="margin-top:5px;">22 CREATURES</div><div id=mdzen083 class="deck_line hover_tr" onclick="AffCard('zen083','Bloodghast','','');">4 <span class=L14>Bloodghast</span> </div><div id=mdakh131 class="deck_line hover_tr" onclick="AffCard('akh131','Flameblade+Adept','','');">4 <span class=L14>Flameblade Adept</span> </div><div id=mdfrf100 class="deck_line hover_tr" onclick="AffCard('frf100','Flamewake+Phoenix','','');">2 <span class=L14>Flamewake Phoenix</span> </div></div><div style="margin:3px;flex:1;" align=left><div id=mdfrf072 class="deck_line hover_tr" onclick="AffCard('frf072','Gurmag+Angler','','');">4 <span class=L14>Gurmag Angler</span> </div><div id=mdhou163 class="deck_line hover_tr" onclick="AffCard('hou163','Hollow+One','','');">4 <span class=L14>Hollow One</span> </div><div id=mdfut090 class="deck_line hover_tr" onclick="AffCard('fut090','Street+Wraith','','');">4 <span class=L14>Street Wraith</span> </div><div class=O14 style="margin-top:5px;">20 INSTANTS and SORC.</div><div id=md10m128 class="deck_line hover_tr" onclick="AffCard('10m128','Burning+Inquiry','','');">4 <span class=L14>Burning Inquiry</span> </div><div id=mdkld108 class="deck_line hover_tr" onclick="AffCard('kld108','Cathartic+Reunion','','');">4 <span class=L14>Cathartic Reunion</span> </div><div id=mddka090 class="deck_line hover_tr" onclick="AffCard('dka090','Faithless+Looting','','');">4 <span class=L14>Faithless Looting</span> </div><div id=mdtor097 class="deck_line hover_tr" onclick="AffCard('tor097','Fiery+Temper','','');">4 <span class=L14>Fiery Temper</span> </div><div id=mdabu151 class="deck_line hover_tr" onclick="AffCard('abu151','Lightning+Bolt','','');">4 <span class=L14>Lightning Bolt</span> </div></div><div style="margin:3px;flex:1;" align=left><div class=O14>SIDEBOARD</div><div id=sbtsp143 class="deck_line hover_tr" onclick="AffCard('tsp143','Ancient+Grudge','','');">2 <span class=L14>Ancient Grudge</span> </div><div id=sbths112 class="deck_line hover_tr" onclick="AffCard('ths112','Anger+of+the+Gods','','');">4 <span class=L14>Anger of the Gods</span> </div><div id=sbdrs117 class="deck_line hover_tr" onclick="AffCard('drs117','Dragon\'s+Claw','','');">3 <span class=L14>Dragon's Claw</span> </div><div id=sbtsp168 class="deck_line hover_tr" onclick="AffCard('tsp168','Lightning+Axe','','');">2 <span class=L14>Lightning Axe</span> </div><div id=sblor145 class="deck_line hover_tr" onclick="AffCard('lor145','Thoughtseize','','');">4 <span class=L14>Thoughtseize</span> </div></div></div>
+		<div id=card_div style="width:100%;visibility:visible;"></div>
+	  </div>
+	</div>
+<div class=w_title style="margin-top:20px;">
+<div align=center>
+<a class=white href=/privacy>Privacy Policy</a>
+
+<div style="padding:5px;" valign=top class=W10 align=center>
+The information presented on this site about Magic: The Gathering, both literal and graphical, is copyrighted by Wizards of the Coast.
+This website is not produced, endorsed, supported, or affiliated with Wizards of the Coast..
+<div class=c_tl></div><div class=c_tr></div><div class=c_bl></div><div class=c_br></div>
+</div>
+</div>
+</div></div>
+	</div></body>
+	</html>

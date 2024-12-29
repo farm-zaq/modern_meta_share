@@ -1,0 +1,246 @@
+Academy Loremaster
+Academy Wall
+Aether Channeler
+Aggressive Sabotage
+Ajani Sleeper Agent
+Anointed Peacekeeper
+Archangel of Wrath
+Argivian Cavalier
+Argivian Phalanx
+Aron Benalia's Ruin
+Artillery Blast
+Astor Bearer of Blades
+Automatic Librarian
+Baird Argivian Recruiter
+Balduvian Atrocity
+Balduvian Berserker
+Balmor Battlemage Captain
+Barkweave Crusher
+Battlefly Swarm
+Battle-Rage Blessing
+Battlewing Mystic
+Benalish Faithbonder
+Benalish Sleeper
+Bite Down
+Blight Pile
+Bog Badger
+Bortuk Bonerattle
+Braids Arisen Nightmare
+Braids's Frightful Return
+Briar Hydra
+Chaotic Transformation
+Charismatic Vanguard
+Choking Miasma
+Citizen's Arrest
+Cleaving Skyrider
+Clockwork Drawbridge
+Coalition Skyknight
+Coalition Warbrute
+Colossal Growth
+Combat Research
+Contaminated Aquifer
+Coral Colony
+Cosmic Epiphany
+Crystal Grotto
+Cult Conscript
+Cut Down
+Danitha Benalia's Hope
+Deathbloom Gardener
+Defiler of Dreams
+Defiler of Faith
+Defiler of Flesh
+Defiler of Instinct
+Defiler of Vigor
+Destroy Evil
+Djinn of the Fountain
+Drag to the Bottom
+Eerie Soultender
+Elas il-Kor Sadistic Pilgrim
+Electrostatic Infantry
+Elfhame Wurm
+Elvish Hydromancer
+Ertai Resurrected
+Ertai's Scorn
+Evolved Sleeper
+Extinguish the Light
+Fires of Victory
+Floriferous Vinewall
+Flowstone Infusion
+Flowstone Kavu
+Founding the Third Path
+Frostfist Strider
+Furious Bellow
+Gaea's Might
+Garna Bloodfist of Keld
+Geothermal Bog
+Ghitu Amplifier
+Gibbering Barricade
+Goblin Picker
+Golden Argosy
+Guardian of New Benalia
+Haughty Djinn
+Haunted Mire
+Haunting Figment
+Herd Migration
+Heroic Charge
+Hero's Heirloom
+Hexbane Tortoise
+Hurler Cyclops
+Hurloon Battle Hymn
+Idyllic Beachfront
+Impede Momentum
+Impulse
+Inscribed Tablet
+In Thrall to the Pit
+Ivy Gleeful Spellthief
+Jaya Fiery Negotiator
+Jaya's Firenado
+Jhoira Ageless Innovator
+Jodah's Codex
+Jodah the Unifier
+Join Forces
+Joint Exploration
+Juniper Order Rootweaver
+Karn Living Legacy
+Karn's Sylex
+Keldon Flamesage
+Keldon Strike Team
+King Darien XLVIII
+Knight of Dawn's Light
+Knight of Dusk's Shadow
+Lagomos Hand of Hatred
+Leaf-Crowned Visionary
+Leyline Binding
+Linebreaker Baloth
+Llanowar Greenwidow
+Llanowar Loamspeaker
+Llanowar Stalker
+Love Song of Night and Day
+Magnigoth Sentry
+Meria Scholar of Antiquity
+Meria's Outrider
+Mesa Cavalier
+Micromancer
+Molten Monstrosity
+Molten Tributary
+Monstrous War-Leech
+Mossbeard Ancient
+Nael Avizoa Aeronaut
+Najal the Storm Runner
+Nemata Primeval Warden
+Nishoba Brawler
+Phoenix Chick
+Phyrexian Espionage
+Phyrexian Missionary
+Phyrexian Vivisector
+Phyrexian Warhorse
+Pilfer
+Pixie Illusionist
+Plaza of Heroes
+Prayer of Binding
+Protect the Negotiators
+Queen Allenal of Ruadach
+Quirion Beastcaller
+Radha Coalition Warlord
+Radha's Firebrand
+Radiant Grove
+Raff Weatherlight Stalwart
+Ragefire Hellkite
+Ratadrabik of Urborg
+Relic of Legends
+Resolute Reinforcements
+Rith Liberated Primeval
+Rivaz of the Claw
+Rona Sheoldred's Faithful
+Rona's Vortex
+Rulik Mons Warren Chief
+Rundvelt Hordemaster
+Runic Shot
+Sacred Peaks
+Salvaged Manaworker
+Samite Herbalist
+Scout the Wilderness
+Sengir Connoisseur
+Serra Paragon
+Serra Redeemer
+Shadow Prophecy
+Shadow-Rite Priest
+Shalai's Acolyte
+Shanna Purifying Blade
+Sheoldred's Restoration
+Sheoldred the Apocalypse
+Shield-Wall Sentinel
+Shivan Devastator
+Shore Up
+Silverback Elder
+Silver Scrutiny
+Slimefoot's Survey
+Smash to Dust
+Soaring Drake
+Sol'Kanar the Tainted
+Soul of Windgrace
+Sphinx of Clear Skies
+Splatter Goblin
+Sprouting Goblin
+Squee Dubious Monarch
+Stall for Time
+Stenn Paranoid Partisan
+Strength of the Coalition
+Stronghold Arena
+Sunbathing Rootwalla
+Sunlit Marsh
+Tail Swipe
+Take Up the Shield
+Talas Lookout
+Tangled Islet
+Tattered Apparition
+Tatyova Steward of Tides
+Tear Asunder
+Temporal Firestorm
+Temporary Lockdown
+Territorial Maro
+The Cruelty of Gix
+The Elder Dragon War
+The Phasing of Zhalfir
+The Raven Man
+The Weatherseed Treaty
+The World Spell
+Thran Portal
+Threats Undetected
+Tidepool Turtle
+Timeless Lotus
+Timely Interference
+Tolarian Geyser
+Tolarian Terror
+Tori D'Avenant Fury Rider
+Toxic Abomination
+Tribute to Urborg
+Tura Kennerüd Skyknight
+Twinferno
+Tyrannical Pitlord
+Urborg Lhurgoyf
+Urborg Repossession
+Urza Assembles the Titans
+Uurg Spawn of Turg
+Valiant Veteran
+Vanquisher's Axe
+Vesuvan Duplimancy
+Viashino Branchrider
+Vineshaper Prodigy
+Vodalian Hexcatcher
+Vodalian Mindsinger
+Voda Sea Scavenger
+Vohar Vodalian Desecrator
+Volshe Tideturner
+Walking Bulwark
+Warhost's Frenzy
+Weatherlight Compleated
+Wingmantle Chaplain
+Wooded Ridgeline
+Writhing Necromass
+Yavimaya Iconoclast
+Yavimaya Sojourner
+Yavimaya Steelcrusher
+Yotia Declares War
+Zar Ojanen Scion of Efrava
+Zur Eternal Schemer

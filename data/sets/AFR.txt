@@ -1,0 +1,257 @@
++2 Mace
+Aberrant Mind Sorcerer
+Acererak the Archlich
+Adult Gold Dragon
+Air-Cult Elemental
+Arborea Pegasus
+Arcane Investigator
+Armory Veteran
+Asmodeus the Archfiend
+Baleful Beholder
+Barbarian Class
+Bard Class
+Barrowin of Clan Undurr
+Bar the Gate
+Battle Cry Goblin
+Black Dragon
+Blink Dog
+Blue Dragon
+Boots of Speed
+Brazen Dwarf
+Bruenor Battlehammer
+Bulette
+Bull's Strength
+Burning Hands
+Cave of the Frost Dragon
+Celestial Unicorn
+Chaos Channeler
+Check for Traps
+Choose Your Weapon
+Circle of Dreams Druid
+Circle of the Moon Druid
+Clattering Skeletons
+Cleric Class
+Clever Conjurer
+Cloister Gargoyle
+Compelled Duel
+Contact Other Plane
+Critical Hit
+Dancing Sword
+Dawnbringer Cleric
+Deadly Dispute
+Death-Priest of Myrkul
+Delina Wild Mage
+Delver's Torch
+Demilich
+Demogorgon's Clutches
+Den of the Bugbear
+Devoted Paladin
+Devour Intellect
+Dire Wolf Prowler
+Displacer Beast
+Divine Smite
+Djinni Windseer
+Dragon's Disciple
+Dragon's Fire
+Dragon Turtle
+Drider
+Drizzt Do'Urden
+Druid Class
+Dueling Rapier
+Dungeon Crawler
+Dungeon Descent
+Dungeon Map
+Dwarfhold Champion
+Earth-Cult Elemental
+Ebondeath Dracolich
+Eccentric Apprentice
+Ellywick Tumblestrum
+Elturgard Ranger
+Eye of Vecna
+Eyes of the Beholder
+Farideh Devil's Chosen
+Farideh's Fireball
+Fates' Reversal
+Feign Death
+Feywild Trickster
+Fifty Feet of Rope
+Fighter Class
+Find the Path
+Flameskull
+Flumph
+Fly
+Forsworn Paladin
+Froghemoth
+Gelatinous Cube
+Gloom Stalker
+Gnoll Hunter
+Goblin Javelineer
+Goblin Morningstar
+Grand Master of Flowers
+Grazilaxx Illithid Scholar
+Greataxe
+Green Dragon
+Gretchen Titchwillow
+Grim Bounty
+Grim Wanderer
+Guardian of Faith
+Guild Thief
+Half-Elf Monk
+Hall of Storm Giants
+Hama Pashar Ruin Seeker
+Hand of Vecna
+Herald of Hadar
+Hill Giant Herdgorger
+Hired Hexblade
+Hive of the Eye Tyrant
+Hoarding Ogre
+Hoard Robber
+Hobgoblin Bandit Lord
+Hobgoblin Captain
+Hulking Bugbear
+Hunter's Mark
+Icingdeath Frost Tyrant
+Improvised Weaponry
+Inferno of the Star Mounts
+Ingenious Smith
+Inspiring Bard
+Instrument of the Bards
+Intrepid Outlander
+Iron Golem
+Iymrith Desert Doom
+Jaded Sell-Sword
+Kalain Reclusive Painter
+Keen-Eared Sentry
+Kick in the Door
+Krydle of Baldur's Gate
+Lair of the Hydra
+Leather Armor
+Lightfoot Rogue
+Loathsome Troll
+Lolth Spider Queen
+Long Rest
+Loyal Warhound
+Lurking Roper
+Magic Missile
+Manticore
+Meteor Swarm
+Mimic
+Mind Flayer
+Minimus Containment
+Minion of the Mighty
+Minsc Beloved Ranger
+Monk Class
+Monk of the Open Hand
+Moon-Blessed Cleric
+Mordenkainen
+Mordenkainen's Polymorph
+Nadaar Selfless Paladin
+Neverwinter Dryad
+Ochre Jelly
+Old Gnawbone
+Orb of Dragonkind
+Orcus Prince of Undeath
+Oswald Fiddlebender
+Owlbear
+Paladin Class
+Paladin's Shield
+Pixie Guide
+Planar Ally
+Plate Armor
+Plundering Barbarian
+Portable Hole
+Potion of Healing
+Power of Persuasion
+Power Word Kill
+Precipitous Drop
+Price of Loyalty
+Priest of Ancient Lore
+Prosperous Innkeeper
+Purple Worm
+Rally Maneuver
+Ranger Class
+Ranger's Hawk
+Ranger's Longbow
+Ray of Enfeeblement
+Ray of Frost
+Reaper's Talisman
+Red Dragon
+Rimeshield Frost Giant
+Rogue Class
+Rust Monster
+Scaled Herbalist
+Scion of Stygia
+Secret Door
+Sepulcher Ghoul
+Shambling Ghast
+Shessra Death's Whisper
+Shocking Grasp
+Shortcut Seeker
+Silver Raven
+Skeletal Swarming
+Skullport Merchant
+Sorcerer Class
+Soulknife Spy
+Spare Dagger
+Sphere of Annihilation
+Spiked Pit Trap
+Split the Party
+Spoils of the Hunt
+Steadfast Paladin
+Sudden Insight
+Swarming Goblins
+Sylvan Shepherd
+Targ Nar Demon-Fang Gnoll
+Tasha's Hideous Laughter
+Teleportation Circle
+Temple of the Dragon Queen
+The Blackstaff of Waterdeep
+The Book of Exalted Deeds
+The Book of Vile Darkness
+The Deck of Many Things
+The Tarrasque
+Thieves' Tools
+Tiamat
+Tiger-Tribe Hunter
+Treasure Chest
+Treasure Vault
+Trelasarra Moon Dancer
+Trickster's Talisman
+Triumphant Adventurer
+True Polymorph
+Underdark Basilisk
+Unexpected Windfall
+Valor Singer
+Vampire Spawn
+Varis Silverymoon Ranger
+Veteran Dungeoneer
+Volo Guide to Monsters
+Vorpal Sword
+Wandering Troubadour
+Warlock Class
+Werewolf Pack Leader
+Westgate Regent
+White Dragon
+Wight
+Wild Shape
+Wish
+Wizard Class
+Wizard's Spellbook
+Xanathar Guild Kingpin
+Xorn
+You Come to a River
+You Come to the Gnoll Camp
+You Find a Cursed Idol
+You Find Some Prisoners
+You Find the Villains' Lair
+You Happen On a Glade
+You Hear Something on Watch
+You Meet in a Tavern
+You're Ambushed on the Road
+You See a Guard Approach
+You See a Pair of Goblins
+Yuan-Ti Fang-Blade
+Yuan-Ti Malison
+Zalto Fire Giant Duke
+Zariel Archduke of Avernus
+Zombie Ogre

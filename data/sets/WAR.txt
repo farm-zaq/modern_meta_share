@@ -1,0 +1,247 @@
+Ahn-Crop Invader
+Aid the Fallen
+Ajani the Greathearted
+Angrath Captain of Chaos
+Angrath's Rampage
+Arboreal Grazer
+Arlinn's Wolf
+Arlinn Voice of the Pack
+Ashiok Dream Render
+Ashiok's Skulker
+Aven Eternal
+Awakening of Vitu-Ghazi
+Band Together
+Banehound
+Battlefield Promotion
+Bioessence Hydra
+Blast Zone
+Bleeding Edge
+Blindblast
+Bloom Hulk
+Bolas's Citadel
+Bolt Bend
+Bond of Discipline
+Bond of Flourishing
+Bond of Insight
+Bond of Passion
+Bond of Revival
+Bulwark Giant
+Burning Prophet
+Callous Dismissal
+Casualties of War
+Centaur Nurturer
+Chainwhip Cyclops
+Challenger Troll
+Chandra Fire Artisan
+Chandra's Triumph
+Charity Extractor
+Charmed Stray
+Command the Dreadhorde
+Commence the Endgame
+Contentious Plan
+Courage in Crisis
+Cruel Celebrant
+Crush Dissent
+Cyclops Electromancer
+Davriel Rogue Shadowmage
+Davriel's Shadowfugue
+Deathsprout
+Deliver Unto Evil
+Despark
+Desperate Lunge
+Devouring Hellion
+Divine Arrow
+Domri Anarch of Bolas
+Domri's Ambush
+Dovin Hand of Control
+Dovin's Veto
+Dreadhorde Arcanist
+Dreadhorde Butcher
+Dreadhorde Invasion
+Dreadhorde Twins
+Dreadmalkin
+Duskmantle Operative
+Elite Guardmage
+Emergence Zone
+Enforcer Griffin
+Enter the God-Eternals
+Erratic Visionary
+Eternal Skylord
+Eternal Taskmaster
+Evolution Sage
+Fblthp the Lost
+Feather the Redeemed
+Finale of Devastation
+Finale of Eternity
+Finale of Glory
+Finale of Promise
+Finale of Revelation
+Firemind Vessel
+Flux Channeler
+Forced Landing
+Gideon Blackblade
+Gideon's Battle Cry
+Gideon's Company
+Gideon's Sacrifice
+Gideon's Triumph
+Gideon the Oathsworn
+Gleaming Overseer
+Goblin Assailant
+Goblin Assault Team
+God-Eternal Bontu
+God-Eternal Kefnet
+God-Eternal Oketra
+God-Eternal Rhonas
+God-Pharaoh's Statue
+Grateful Apparition
+Grim Initiate
+Guild Globe
+Guildpact Informant
+Heartfire
+Heartwarming Redemption
+Herald of the Dreadhorde
+Honor the God-Pharaoh
+Huatli's Raptor
+Huatli the Sun's Heart
+Ignite the Beacon
+Ilharg the Raze-Boar
+Interplanar Beacon
+Invade the City
+Invading Manticore
+Iron Bully
+Ironclad Krovod
+Jace Arcane Strategist
+Jace's Projection
+Jace's Ruse
+Jace's Triumph
+Jace Wielder of Mysteries
+Jaya's Greeting
+Jaya Venerated Firemage
+Jiang Yanggu Wildcrafter
+Karn's Bastion
+Karn the Great Creator
+Kasmina Enigmatic Mentor
+Kasmina's Transmutation
+Kaya Bane of the Dead
+Kaya's Ghostform
+Kiora Behemoth Beckoner
+Kiora's Dambreaker
+Kraul Stinger
+Krenko Tin Street Kingpin
+Kronch Wrangler
+Law-Rune Enforcer
+Lazotep Behemoth
+Lazotep Plating
+Lazotep Reaver
+Leyline Prowler
+Liliana Dreadhorde General
+Liliana's Triumph
+Living Twister
+Loxodon Sergeant
+Makeshift Battalion
+Mana Geode
+Martyr for the Cause
+Massacre Girl
+Mayhem Devil
+Merfolk Skydiver
+Mizzium Tank
+Mobilized District
+Mowu Loyal Companion
+Naga Eternal
+Nahiri's Stoneblades
+Nahiri Storm of Stone
+Narset Parter of Veils
+Narset's Reversal
+Neheb Dreadhorde Champion
+Neoform
+Nicol Bolas Dragon-God
+Nissa's Triumph
+Nissa Who Shakes the World
+Niv-Mizzet Reborn
+No Escape
+Oath of Kaya
+Ob Nixilis's Cruelty
+Ob Nixilis the Hate-Twisted
+Paradise Druid
+Parhelion II
+Planewide Celebration
+Pledge of Unity
+Pollenbright Druid
+Pouncing Lynx
+Price of Betrayal
+Prismite
+Prison Realm
+Raging Kronch
+Rally of Wings
+Ral's Outburst
+Ral Storm Conduit
+Ravnica at War
+Relentless Advance
+Rescuer Sphinx
+Return to Nature
+Rising Populace
+Roalesk Apex Hybrid
+Role Reversal
+Rubblebelt Rioters
+Saheeli's Silverwing
+Saheeli Sublime Artificer
+Samut's Sprint
+Samut Tyrant Smasher
+Sarkhan's Catharsis
+Sarkhan the Masterless
+Shriekdiver
+Silent Submersible
+Single Combat
+Sky Theater Strix
+Snarespinner
+Solar Blaze
+Sorin Vengeful Bloodlord
+Soul Diviner
+Spark Double
+Spark Harvest
+Spark Reaper
+Spellgorger Weird
+Spellkeeper Weird
+Steady Aim
+Stealth Mission
+Storm the Citadel
+Storrev Devkarin Lich
+Sunblade Angel
+Tamiyo Collector of Tales
+Tamiyo's Epiphany
+Teferi's Time Twist
+Teferi Time Raveler
+Tenth District Legionnaire
+Teyo's Lightshield
+Teyo the Shieldmage
+Tezzeret Master of the Bridge
+The Elderspell
+The Wanderer
+Thunder Drake
+Thundering Ceratok
+Tibalt Rakish Instigator
+Tibalt's Rager
+Time Wipe
+Tithebearer Giant
+Toll of the Invasion
+Tolsimir Friend to Wolves
+Tomik Distinguished Advokist
+Topple the Statue
+Trusted Pegasus
+Turret Ogre
+Tyrant's Scorn
+Ugin's Conjurant
+Ugin the Ineffable
+Unlikely Aid
+Vampire Opportunist
+Vivien Champion of the Wilds
+Vivien's Arkbow
+Vivien's Grizzly
+Vizier of the Scorpion
+Vraska's Finisher
+Vraska Swarm's Eminence
+Wall of Runes
+Wanderer's Strike
+Wardscale Crocodile
+War Screecher
+Widespread Brutality

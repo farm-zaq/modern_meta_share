@@ -1,0 +1,126 @@
+Acidic Slime
+Acolyte of Xathrid
+Act of Treason
+Alluring Siren
+Angel's Mercy
+Ant Queen
+Awakener Druid
+Ball Lightning
+Baneslayer Angel
+Berserkers of Blood Ridge
+Black Knight
+Blinding Mage
+Borderland Ranger
+Bountiful Harvest
+Bramble Creeper
+Burning Inquiry
+Burst of Speed
+Capricious Efreet
+Captain of the Watch
+Cemetery Reaper
+Centaur Courser
+Child of Night
+Convincing Mirage
+Coral Merfolk
+Cudgel Troll
+Deadly Recluse
+Disentomb
+Disorient
+Divination
+Divine Verdict
+Djinn of Wishes
+Doom Blade
+Dragonskull Summit
+Dread Warlock
+Drowned Catacomb
+Duress
+Earthquake
+Elite Vanguard
+Elvish Archdruid
+Emerald Oryx
+Entangling Vines
+Essence Scatter
+Fiery Hellhound
+Fog
+Gargoyle Castle
+Glacial Fortress
+Glorious Charge
+Goblin Artillery
+Goblin Chieftain
+Gorgon Flail
+Great Sable Stag
+Griffin Sentinel
+Guardian Seraph
+Harm's Way
+Haunting Echoes
+Hive Mind
+Honor of the Pure
+Howling Banshee
+Ice Cage
+Illusionary Servant
+Indestructibility
+Inferno Elemental
+Jackal Familiar
+Jump
+Kalonian Behemoth
+Kelinore Bat
+Lifelink
+Lightning Bolt
+Lightwielder Paladin
+Lurking Predators
+Magebane Armor
+Magma Phoenix
+Master of the Wild Hunt
+Merfolk Sovereign
+Mind Control
+Mirror of Fate
+Mist Leopard
+Mold Adder
+Nature's Spiral
+Oakenform
+Open the Vaults
+Palace Guard
+Planar Cleansing
+Prized Unicorn
+Protean Hydra
+Regenerate
+Rhox Pikemaster
+Rise from the Grave
+Rootbound Crag
+Runeclaw Bear
+Safe Passage
+Sanguine Bond
+Seismic Strike
+Serpent of the Endless Sea
+Siege Mastodon
+Sign in Blood
+Silence
+Silvercoat Lion
+Sleep
+Solemn Offering
+Soul Bleed
+Sphinx Ambassador
+Stampeding Rhino
+Stone Giant
+Stormfront Pegasus
+Sunpetal Grove
+Time Warp
+Tome Scour
+Trumpet Blast
+Undead Slayer
+Vampire Aristocrat
+Vampire Nocturnus
+Veteran Armorsmith
+Veteran Swordsmith
+Viashino Spearhunter
+Wall of Bone
+Wall of Faith
+Wall of Frost
+Warpath Ghoul
+Weakness
+White Knight
+Windstorm
+Xathrid Demon
+Yawning Fissure
+Zephyr Sprite
+Zombie Goliath

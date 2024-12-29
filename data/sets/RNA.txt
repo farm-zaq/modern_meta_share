@@ -1,0 +1,243 @@
+Absorb
+Aeromunculus
+Amplifire
+Angelic Exaltation
+Angel of Grace
+Applied Biomancy
+Archway Angel
+Arrester's Admonition
+Arrester's Zeal
+Awaken the Erstwhile
+Axebane Beast
+Azorius Knight-Arbiter
+Azorius Locket
+Azorius Skyguard
+Bankrupt in Blood
+Basilica Bell-Haunt
+Bedeck
+Bedevil
+Benthic Biomancer
+Biogenic Ooze
+Biogenic Upgrade
+Biomancer's Familiar
+Bladebrand
+Blade Juggler
+Bloodmist Infiltrator
+Bolrac-Clan Crusher
+Bring to Trial
+Burn Bright
+Burning-Tree Vandal
+Captive Audience
+Carnival
+Carrion Imp
+Catacomb Crocodile
+Cavalcade of Calamity
+Charging War Boar
+Chillbringer
+Cindervines
+Civic Stalwart
+Clamor Shaman
+Clan Guildmage
+Clear the Mind
+Clear the Stage
+Code of Constraint
+Collision
+Combine Guildmage
+Consecrate
+Consign to the Pit
+Coral Commando
+Cry of the Carnarium
+Cult Guildmage
+Dagger Caster
+Dead Revels
+Debtors' Transport
+Deface
+Depose
+Deputy of Detention
+Domri Chaos Bringer
+Domri City Smasher
+Domri's Nodorog
+Dovin Architect of Law
+Dovin Grand Arbiter
+Dovin's Acuity
+Dovin's Automaton
+Dovin's Dismissal
+Drill Bit
+Electrodominance
+Elite Arrester
+Emergency Powers
+End-Raze Forerunners
+Enraged Ceratok
+Essence Capture
+Ethereal Absolution
+Expose to Daylight
+Eyes Everywhere
+Faerie Duelist
+Feral Maaka
+Final Payment
+Fireblade Artist
+Flames of the Raze-Boar
+Font of Agonies
+Footlight Fiend
+Forbidding Spirit
+Frenzied Arynx
+Frilled Mystic
+Galloping Lizrog
+Gatebreaker Ram
+Gate Colossus
+Gates Ablaze
+Gateway Sneak
+Get the Point
+Ghor-Clan Wrecker
+Glass of the Guildpact
+Goblin Gathering
+Grasping Thrull
+Gravel-Hide Goblin
+Grotesque Demise
+Growth-Chamber Guardian
+Growth Spiral
+Gruul Beastmaster
+Gruul Locket
+Gruul Spellbreaker
+Guardian Project
+Gutterbones
+Gyre Engineer
+Haazda Officer
+Hackrobat
+Hero of Precinct One
+High Alert
+Humongulus
+Hydroid Krasis
+Ill-Gotten Inheritance
+Immolation Shaman
+Impassioned Orator
+Imperious Oligarch
+Incubation Druid
+Incubation
+Judith the Scourge Diva
+Justiciar's Portal
+Kaya Orzhov Usurper
+Kaya's Wrath
+Knight of Sorrows
+Knight of the Last Breath
+Lavinia Azorius Renegade
+Lawmage's Binding
+Light Up the Stage
+Lumbering Battlement
+Macabre Mockery
+Mass Manipulation
+Mesmerizing Benthid
+Ministrant of Obligation
+Mirror March
+Nikya of the Old Ways
+Noxious Groodion
+Open the Gates
+Orzhov Enforcer
+Orzhov Locket
+Orzhov Racketeers
+Persistent Petitioners
+Pestilent Spirit
+Pitiless Pontiff
+Plague Wight
+Plaza of Harmony
+Precognitive Perception
+Priest of Forgotten Gods
+Prime Speaker Vannifar
+Prowling Caracal
+Prying Eyes
+Pteramander
+Quench
+Rafter Demon
+Ragefire
+Rakdos Firewheeler
+Rakdos Locket
+Rakdos Roustabout
+Rakdos the Showstopper
+Rakdos Trumpeter
+Rally to Battle
+Rampage of the Clans
+Rampaging Rendhorn
+Ravager Wurm
+Regenesis
+Repudiate
+Resolute Watchdog
+Revival
+Rhythm of the Wild
+Rix Maadi Reveler
+Rubblebelt Recluse
+Rubblebelt Runner
+Rubble Reading
+Rubble Slinger
+Rumbling Ruin
+Sage's Row Savant
+Sagittars' Volley
+Saruli Caretaker
+Sauroform Hybrid
+Savage Smash
+Scorchmark
+Screaming Shield
+Scuttlegator
+Senate Courier
+Senate Griffin
+Senate Guildmage
+Sentinel's Mark
+Seraph of the Scales
+Sharktocrab
+Shimmer of Possibility
+Silhana Wayfinder
+Simic Ascendancy
+Simic Locket
+Skarrgan Hellkite
+Skatewing Spy
+Skewer the Critics
+Skitter Eel
+Sky Tether
+Slimebind
+Smelt-Ward Ignus
+Smothering Tithe
+Spawn of Mayhem
+Spear Spewer
+Sphinx of Foresight
+Sphinx of New Prahv
+Sphinx of the Guildpact
+Sphinx's Insight
+Spikewheel Acrobat
+Spire Mangler
+Spirit of the Spires
+Steeple Creeper
+Stony Strength
+Storm Strike
+Summary Judgment
+Sunder Shaman
+Swirling Torrent
+Sylvan Brushstrider
+Syndicate Guildmage
+Syndicate Messenger
+Tenth District Veteran
+Territorial Boar
+Teysa Karlov
+Theater of Horrors
+The Haunt of Hightower
+Thirsting Shade
+Thought Collapse
+Thrash
+Tin Street Dodger
+Titanic Brawl
+Tithe Taker
+Tome of the Guildpact
+Trollbred Guardian
+Twilight Panther
+Unbreakable Formation
+Undercity Scavenger
+Undercity's Embrace
+Verity Circle
+Vindictive Vampire
+Vizkopa Vampire
+Wall of Lost Thoughts
+Warrant
+Watchful Giant
+Wilderness Reclamation
+Windstorm Drake
+Wrecking Beast
+Zegana Utopian Speaker
+Zhur-Taa Goblin

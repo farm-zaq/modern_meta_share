@@ -31,6 +31,13 @@ def get_sets_as_sets(separate_standard):
   sets["Other"] = set()
   return sets
 
+def add_card_sets(bigger, smaller):
+  for card in smaller:
+    if card not in bigger:
+      bigger[card] = 0
+    bigger[card] += smaller[card]
+  return bigger
+
 #TODO: FILTERING
 def get_cards_from_deck(deck_file, is_individual, filter_cards):
   deck_cards = {}
@@ -51,125 +58,46 @@ def get_cards_from_deck(deck_file, is_individual, filter_cards):
         deck_cards[card_name] += quantity
   return deck_cards
 
-def get_card_from_event(event_id, date, is_individual, filter_cards, format, min_stars):
-  day, month, year = date.split("/")
-  event_folder = f"data/top8/{format}/{year}/{month}/{day}/{event_id}"
+def get_card_from_event(event_folder, is_individual, filter_cards, min_stars):
   star_file = f"{event_folder}/stars.txt"
+  event_cards = {}
   with open(star_file, "r") as file:
     stars = int(file.readline())
     if stars < min_stars:
-      return {}
+      return event_cards
   _, _, deck_files = os.walk(event_folder)
   for deck_file in deck_files:
     deck_cards = get_cards_from_deck(deck_file, is_individual, filter_cards)
+    event_cards = add_card_sets(event_cards, deck_cards)
+  return event_cards
 
-def get_stored_challenge_data(link, cur_month, cur_year, cur_day, format):
-  if cur_day:
-    date_folder_name = f"./data/top8/{format}/{cur_year}/{cur_month}/{'0' if cur_day < 10 else ''}{cur_day}"
-    for _, _, files in os.walk(date_folder_name):
-      for file in files:
-        if link == file:
-          with open(f"{date_folder_name}/{file}", "r") as file:
-            decklists = json.load(file)
-            return decklists
-  else:
-    month_folder_name = f"./data/top8/{format}/{cur_year}/{cur_month}"
-    for _, dirs, _ in os.walk(month_folder_name):
-      for dir in dirs:
-        dir = f"{month_folder_name}/{dir}"
-        for _, _, files in os.walk(dir):
-          for file in files:
-            if link == file or (file == link[-len(file):]) or (len(link) > 10 and link[0:10] == "/decklist/" and link[10:] == file):
-              with open(f"{dir}/{file}", "r") as file:
-                decklists = json.load(file)
-                return decklists
-  return None
+def get_cards_for_day(cur_day, cur_month, cur_year, is_individual, filter_cards, format, min_stars):
+  day_cards = {}
+  day_folder = f"./data/top8/{format}/{cur_year}/{cur_month}/{cur_day}"
+  _, event_dirs, _ = os.walk(day_folder)
+  for event_id in event_dirs:
+    event_folder = f"{day_folder}/{event_id}"
+    event_cards = get_card_from_event(event_folder, is_individual, filter_cards, min_stars)
+    day_cards = add_card_sets(day_cards, event_cards)
+  return day_cards
 
-def get_remote_challenge_data(link, cur_month, cur_year, format):
-  if link[0] != "/":
-    link = f"/{link}"
-  challenge_url = f"https://www.mtgo.com{link}"
-  response = requests.get(challenge_url)
-  soup = BeautifulSoup(response.text, 'html.parser')
-  script_tag = soup.find('script', string=re.compile(r'window\.MTGO\.decklists\.data'))
-  decklists = None
-  if script_tag:
-    json_text = re.search(r'window\.MTGO\.decklists\.data\s*=\s*(\{.*?\});', script_tag.string)
-    if json_text:
-        data = json.loads(json_text.group(1))
-        if "decklists" in data:
-          decklists = data["decklists"]
-        else:
-          decklists = None
-  if decklists:
-    day = data["starttime"].split(" ")[0].split("-")[2]
-    clean_link = link.split("/")[-1]    
-    file_name = f"./data/top8/{format}/{cur_year}/{cur_month}/{day}/{clean_link}"
-    os.makedirs(os.path.dirname(file_name), exist_ok=True)
-    with open(file_name, "w") as file:
-      json.dump(decklists, file, indent=4)
-    return decklists
-  return None
-
-def get_cards_from_challenge(link, is_individual, filter_cards, cur_month, cur_year, format, cur_day=None):
-  challenge_cards = {}
-  decklists = get_stored_challenge_data(link, cur_month, cur_year, cur_day, format)
-  if not decklists:
-    decklists = get_remote_challenge_data(link, cur_month, cur_year, format)    
-  if decklists:
-    for deck in decklists:
-      deck_cards = get_cards_from_deck(deck, is_individual, filter_cards)
-      for card_name in deck_cards:
-        if card_name not in challenge_cards:
-          challenge_cards[card_name] = 0
-        challenge_cards[card_name] += deck_cards[card_name]
-    return challenge_cards
-  else:
-    return None
-
-def get_cards_for_month(cur_month, cur_year, is_individual, filter_cards, stored_only, format):
-  if stored_only:
-    challenges = []
-    month_folder_name = f"./data/top8/{format}/{cur_year}/{cur_month}"
-    for _, dirs, _ in os.walk(month_folder_name):
-      for dir in dirs:
-        dir = f"{month_folder_name}/{dir}"
-        for _, _, files in os.walk(dir):
-          for file in files:
-            challenges.append(file)
-  else:
-    challenges = get_challenges(cur_month, cur_year, format)
-  monthly_cards = {}
-  for challenge_link in challenges:
-    challenge_cards = get_cards_from_challenge(challenge_link, is_individual, filter_cards, cur_month, cur_year, format)      
-    if challenge_cards:
-      for card_name in challenge_cards:
-        if card_name not in monthly_cards:
-          monthly_cards[card_name] = 0
-        monthly_cards[card_name] += challenge_cards[card_name]
-  return monthly_cards
-
-def get_cards_for_day(month, year, day, is_individual, filter_cards, format):
-  daily_cards = {}
-  folder = f'./data/top8/{format}/{year}/{month}/{"0" if day < 10 else ""}{day}'
-  for root, dirs, files in os.walk(folder):
-    for file in files:
-      challenge_cards = get_cards_from_challenge(file, is_individual, filter_cards, month, year, format, cur_day=day)  
-      if challenge_cards:
-        for card_name in challenge_cards:
-          if card_name not in daily_cards:
-            daily_cards[card_name] = 0
-          daily_cards[card_name] += challenge_cards[card_name]
-  return daily_cards
+def get_cards_for_month(cur_month, cur_year, is_individual, filter_cards, format, min_stars):
+  month_cards = {}
+  month_folder_name = f"./data/top8/{format}/{cur_year}/{cur_month}"
+  _, day_dirs, _ = os.walk(month_folder_name)
+  for day in day_dirs:
+    day_cards = get_cards_for_day(cur_month, cur_year, day, is_individual, filter_cards, format, min_stars)
+    month_cards = add_card_sets(month_cards, day_cards)
+  return month_cards
   
-def get_cards_over_time_monthly(start_month, start_year, end_month, end_year, is_individual, filter_cards, stored_only, format):
+def get_cards_over_time_monthly(start_month, start_year, end_month, end_year, is_individual, filter_cards, stored_only, format, min_stars):
   month = start_month
   year = start_year
   all_cards = {}
   while True:
     month_str = f"{year}/{month}"
     print(month_str)
-    all_cards[month_str] = get_cards_for_month(month, year, is_individual, filter_cards, stored_only, format)
+    all_cards[month_str] = get_cards_for_month(month, year, is_individual, filter_cards, format, min_stars)
 
     month += 1
     if month == 13:
@@ -179,13 +107,13 @@ def get_cards_over_time_monthly(start_month, start_year, end_month, end_year, is
       break
   return all_cards
 
-def get_cards_over_time_daily(start_day, start_month, start_year, end_month, end_year, is_individual, filter_cards, format):
+def get_cards_over_time_daily(start_day, start_month, start_year, end_month, end_year, is_individual, filter_cards, format, min_stars):
   month = start_month
   year = start_year
   day = start_day
   all_cards = {}
   while True:    
-    daily_cards = get_cards_for_day(month, year, day, is_individual, filter_cards, format)
+    daily_cards = get_cards_for_day(day, month, year, is_individual, filter_cards, format, min_stars)
     date_str = f'{year}/{month}/{"0" if day < 10 else ""}{day}'
     all_cards[date_str] = daily_cards
 
@@ -301,16 +229,16 @@ if __name__ == "__main__":
     parser.add_argument('--output_file', default="output/data.csv", type=str)
     parser.add_argument('--daily', action="store_true")
     parser.add_argument('--output_type', default="set_data", type=str)
-    parser.add_argument('--stored_only', action="store_true")
+    parser.add_argument('--min_stars', default=2, type=int)
     parser.add_argument('--individual_cards', default="", type=str)
     parser.add_argument('--format', default="modern", type=str)
     parser.add_argument('--separate_standard', action="store_true")
     args = parser.parse_args()
 
     if args.daily:
-      all_cards = get_cards_over_time_daily(args.start_day, args.start_month, args.start_year, args.end_month, args.end_year, args.is_individual, args.filter_cards, args.format)
+      all_cards = get_cards_over_time_daily(args.start_day, args.start_month, args.start_year, args.end_month, args.end_year, args.is_individual, args.filter_cards, args.format, args.min_stars)
     else:
-      all_cards = get_cards_over_time_monthly(args.start_month, args.start_year, args.end_month, args.end_year, args.is_individual, args.filter_cards, args.stored_only, args.format)
+      all_cards = get_cards_over_time_monthly(args.start_month, args.start_year, args.end_month, args.end_year, args.is_individual, args.filter_cards, args.format,args.min_stars)
     
     if args.output_type == "set_data":
       sets = get_sets_as_sets(args.separate_standard)

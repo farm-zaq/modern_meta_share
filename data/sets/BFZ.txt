@@ -1,0 +1,234 @@
+Adverse Conditions
+Akoum Firebird
+Akoum Hellkite
+Akoum Stonewaker
+Aligned Hedron Network
+Ally Encampment
+Angelic Captain
+Angelic Gift
+Angel of Renewal
+Bane of Bala Ged
+Barrage Tyrant
+Beastcaller Savant
+Belligerent Whiptail
+Benthic Infiltrator
+Blighted Cataract
+Blighted Fen
+Blighted Gorge
+Blighted Steppe
+Blighted Woodland
+Blight Herder
+Blisterpod
+Bloodbond Vampire
+Boiling Earth
+Breaker of Armies
+Brilliant Spectrum
+Bring to Light
+Brood Butcher
+Broodhunter Wurm
+Brood Monitor
+Brutal Expulsion
+Call the Scions
+Canopy Vista
+Carrier Thrall
+Catacomb Sifter
+Chasm Guide
+Cinder Glade
+Cliffside Lookout
+Cloud Manta
+Clutch of Currents
+Coastal Discovery
+Complete Disregard
+Conduit of Ruin
+Coralhelm Guide
+Courier Griffin
+Crumble to Dust
+Cryptic Cruiser
+Culling Drone
+Dampening Pulse
+Deathless Behemoth
+Defiant Bloodlord
+Demon's Grasp
+Desolation Twin
+Dominator Drone
+Drana Liberator of Malakir
+Drana's Emissary
+Drowner of Hope
+Dust Stalker
+Earthen Arms
+Eldrazi Devastator
+Eldrazi Skyspawner
+Emeria Shepherd
+Encircling Fissure
+Endless One
+Exert Influence
+Expedition Envoy
+Eyeless Watcher
+Fathom Feeder
+Felidar Cub
+Fertile Thicket
+Firemantle Mage
+Forerunner of Slaughter
+Fortified Rampart
+From Beyond
+Geyserfield Stalker
+Ghostly Sentinel
+Giant Mantis
+Gideon Ally of Zendikar
+Gideon's Reproach
+Grave Birthing
+Greenwarden of Murasa
+Grip of Desolation
+Grove Rumbler
+Grovetender Druids
+Gruesome Slaughter
+Guardian of Tazeem
+Guul Draz Overseer
+Hagra Sharpshooter
+Halimar Tidecaller
+Hedron Archive
+Hedron Blade
+Herald of Kozilek
+Hero of Goma Fada
+Horribly Awry
+Incubator Drone
+Infuse with the Elements
+Jaddi Offshoot
+Kalastria Healer
+Kalastria Nightwatch
+Kiora Master of the Depths
+Kitesail Scout
+Kor Bladewhirl
+Kor Castigator
+Kor Entanglers
+Kozilek's Channeler
+Kozilek's Sentinel
+Lantern Scout
+Lavastep Raider
+Lifespring Druid
+Lithomancer's Focus
+Looming Spires
+Lumbering Falls
+Makindi Patrol
+Makindi Sliderunner
+Malakir Familiar
+March from the Tomb
+Mind Raker
+Mire's Malice
+Mist Intruder
+Molten Nursery
+Mortuary Mire
+Munda Ambush Leader
+Murasa Ranger
+Murk Strider
+Natural Connection
+Nettle Drone
+Nirkana Assassin
+Nissa's Renewal
+Noyan Dar Roil Shaper
+Oblivion Sower
+Ob Nixilis Reignited
+Omnath Locus of Rage
+Ondu Champion
+Ondu Greathorn
+Ondu Rising
+Oracle of Dust
+Oran-Rief Hydra
+Oran-Rief Invoker
+Outnumber
+Painful Truths
+Part the Waterveil
+Pathway Arrows
+Planar Outburst
+Plated Crusher
+Prairie Stream
+Prism Array
+Processor Assault
+Quarantine Field
+Radiant Flames
+Reckless Cohort
+Reclaiming Vines
+Resolute Blademaster
+Retreat to Coralhelm
+Retreat to Emeria
+Retreat to Hagra
+Retreat to Kazandu
+Retreat to Valakut
+Rising Miasma
+Roilmage's Trick
+Roil Spout
+Roil's Retribution
+Rolling Thunder
+Rot Shambler
+Ruination Guide
+Ruinous Path
+Ruin Processor
+Rush of Ice
+Salvage Drone
+Sanctum of Ugin
+Sandstone Bridge
+Scatter to the Winds
+Scour from Existence
+Scythe Leopard
+Seek the Wilds
+Serene Steward
+Serpentine Spike
+Shadow Glider
+Shambling Vent
+Shatterskull Recruit
+Sheer Drop
+Shrine of the Forsaken Gods
+Silent Skimmer
+Sire of Stagnation
+Skitterskin
+Skyline Cascade
+Skyrider Elf
+Slab Hammer
+Sludge Crawler
+Smoldering Marsh
+Smothering Abomination
+Snapping Gnarlid
+Spawning Bed
+Spell Shrivel
+Stasis Snare
+Stonefury
+Stone Haven Medic
+Sunken Hollow
+Sure Strike
+Swarm Surge
+Swell of Growth
+Tajuru Beastmaster
+Tajuru Stalwart
+Tajuru Warcaller
+Tandem Tactics
+Tide Drifter
+Tightening Coils
+Titan's Presence
+Touch of the Void
+Transgress the Mind
+Tunneling Geopede
+Turn Against
+Ugin's Insight
+Ulamog's Despoiler
+Ulamog's Nullifier
+Ulamog's Reclaimer
+Ulamog the Ceaseless Hunger
+Undergrowth Champion
+Unified Front
+Unnatural Aggression
+Valakut Invoker
+Valakut Predator
+Vampiric Rites
+Vestige of Emrakul
+Veteran Warleader
+Vile Aggregate
+Void Attendant
+Void Winnower
+Volcanic Upheaval
+Voracious Null
+Wasteland Strangler
+Wave-Wing Elemental
+Windrider Patrol
+Woodland Wanderer
+Zada Hedron Grinder
+Zulaport Cutthroat
